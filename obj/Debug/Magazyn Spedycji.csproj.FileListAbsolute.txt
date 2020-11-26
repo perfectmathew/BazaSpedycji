@@ -1,0 +1,36 @@
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\bin\Debug\Magazyn Spedycji.exe.config
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\bin\Debug\Magazyn Spedycji.exe
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\bin\Debug\Magazyn Spedycji.pdb
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.Properties.Resources.resources
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn Spedycji.csproj.GenerateResource.cache
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn Spedycji.csproj.CoreCompileInputs.cache
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn Spedycji.exe
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn Spedycji.pdb
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.MagazynSpedycji.resources
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\bin\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.AdminPanel.resources
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.AdminPanel.pl.resources
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.UserPanel.resources
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.CarrierPanel.resources
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\bin\Debug\MagazynSpedycji.mdb
+C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.SingUp.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\MagazynSpedycji.mdb
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.exe.config
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.exe
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.pdb
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.AdminPanel.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.CarrierPanel.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.SingUp.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.MagazynSpedycji.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.Properties.Resources.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.UserPanel.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.AdminPanel.pl.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.csproj.GenerateResource.cache
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.csproj.CoreCompileInputs.cache
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.exe
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.pdb
