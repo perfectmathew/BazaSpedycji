@@ -13,7 +13,7 @@ namespace Magazyn_Spedycji
   
     public partial class MagazynSpedycji : Form
     {
-     
+     //   string LoginValue;
         private AdminPanel adminPanel;
         private CarrierPanel carrierPanel;
         private UserPanel userPanel;
@@ -34,8 +34,9 @@ namespace Magazyn_Spedycji
 
         private void button1_Click(object sender, EventArgs e)
         {
+        
             //SingUp.Hide();
-           if (UserAccessL.SelectedIndex == -1)
+            if (UserAccessL.SelectedIndex == -1)
             {
                 MessageBox.Show("Wybierz poziom uprawnień!");
             }
@@ -86,9 +87,12 @@ namespace Magazyn_Spedycji
                 }
                 if (count == 1)
                 {
+                   // LoginValue = login_register.Text;
                     this.Hide();
                     CarrierPanel carrierPanel = new CarrierPanel();
+                  //  carrierPanel.ab(LoginValue.ToString());
                     carrierPanel.ShowDialog();
+                   
                     carrierPanel = null;
                     this.Show();
                 }
@@ -105,23 +109,33 @@ namespace Magazyn_Spedycji
                   var UserPanel = new UserPanel();
                   UserPanel.Closed += (s, args) => this.Close();
                   UserPanel.Show();*/
+               
                 con.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = con;
-                command.CommandText = "select * from Klienci where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                command.CommandText = "select ID from Klienci where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
                 OleDbDataReader reader = command.ExecuteReader();
+      
+             
+
                 int count = 0;
                 while (reader.Read())
                 {
-
+                    
                     count = count + 1;
 
                 }
                 if (count == 1)
                 {
+                    OleDbCommand newclient = new OleDbCommand();
+                    newclient.Connection = con;
+                    newclient.CommandText = "select ID from Klienci where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                    Int32 IDK = (Int32)newclient.ExecuteScalar();
                     this.Hide();
 
+         
                     UserPanel user = new UserPanel();
+                  user.ab(IDK.ToString());
                     user.ShowDialog();
                     user = null;
                     this.Show();
