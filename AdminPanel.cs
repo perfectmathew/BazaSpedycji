@@ -82,19 +82,19 @@ namespace Magazyn_Spedycji
                     }
                     if (count == 0)
                     {
-                        MessageBox.Show("This User, does not exist!");
+                        MessageBox.Show("Użytkownik nie istnieje!");
                     }
                     else
                     {
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Data Deleted!");
+                        MessageBox.Show("Użytkownik Usunięty!");
                     }
                   
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unexcpected Error: " + ex);
+                    MessageBox.Show("Napotkany problem: " + ex);
                 }
                 con.Close();
             }

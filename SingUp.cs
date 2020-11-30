@@ -23,7 +23,7 @@ namespace Magazyn_Spedycji
 
             if (FirstName.Text == "" || SurrName.Text == "" || mail.Text == "" || Login.Text == "" || Pass.Text == "")
             {
-                MessageBox.Show("Fill all fields to add the user!");
+                MessageBox.Show("Uzupełnij wszystkie pola!");
             }
             else
             {
@@ -46,10 +46,10 @@ namespace Magazyn_Spedycji
                         cmd.Connection = con;
                         cmd.CommandText = "INSERT INTO Klienci(Imie,Nazwisko,Email,Login,Haslo) values('" + FirstName.Text + "','" + SurrName.Text + "','" + mail.Text + "','" + Login.Text + "','" + Pass.Text + "') ";
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("User added successful!");
+                        MessageBox.Show("Pomyślnie zarejestrowano!");
                         this.Hide();
                     }
-                    else MessageBox.Show("Error! User is already in our database!");
+                    else MessageBox.Show("Użytkowni o danym loginie już istnieje w naszej bazie danych!");
                     con.Close();
                 }
                 catch (Exception ex)

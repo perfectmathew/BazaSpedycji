@@ -22,6 +22,9 @@ namespace Magazyn_Spedycji
         public MagazynSpedycji()
         {
             InitializeComponent();
+            label1.Hide();
+            label2.Hide();
+            label3.Hide();
             loginString.Hide();
             login_register.Hide();
             register_password.Hide();
@@ -34,7 +37,7 @@ namespace Magazyn_Spedycji
             //SingUp.Hide();
            if (UserAccessL.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a user permission level.");
+                MessageBox.Show("Wybierz poziom uprawnień!");
             }
             if (UserAccessL.SelectedIndex == 0)
             {
@@ -52,7 +55,7 @@ namespace Magazyn_Spedycji
                 if (count == 1)
                 {
                     
-                    MessageBox.Show("Welcome to Administration Panel!");
+                    MessageBox.Show("Witamy w panelu administracyjnym!");
                     this.Hide();
 
                     AdminPanel adminPanel = new AdminPanel();
@@ -63,16 +66,38 @@ namespace Magazyn_Spedycji
                 }
              else
                 {
-                    MessageBox.Show("Invalid Login or Password!");
+                    MessageBox.Show("Nieprawidłowy login lub hasło!");
                 }
                 con.Close();
             }
             if (UserAccessL.SelectedIndex == 1)
             {
-                this.Hide();
-                var CarrierPanel = new CarrierPanel();
-                CarrierPanel.Closed += (s, args) => this.Close();
-                CarrierPanel.Show();
+                con.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = con;
+                command.CommandText = "select * from Spedytorzy where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                OleDbDataReader reader = command.ExecuteReader();
+                int count = 0;
+                while (reader.Read())
+                {
+
+                    count = count + 1;
+
+                }
+                if (count == 1)
+                {
+                    this.Hide();
+                    CarrierPanel carrierPanel = new CarrierPanel();
+                    carrierPanel.ShowDialog();
+                    carrierPanel = null;
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Nieprawidłowy login lub hasło!");
+                }
+                con.Close();
+               
             }
             if (UserAccessL.SelectedIndex == 2)
             {
@@ -103,7 +128,7 @@ namespace Magazyn_Spedycji
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Login or Password!");
+                    MessageBox.Show("Nieprawidłowy login lub hasło!");
                 }
                 con.Close();
             }
@@ -112,6 +137,9 @@ namespace Magazyn_Spedycji
 
         private void SingInSwitch_Click(object sender, EventArgs e)
         {
+            label1.Show();
+            label2.Show();
+            label3.Show();
             loginString.Show();
             login_register.Show();
             register_password.Show();
