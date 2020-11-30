@@ -160,9 +160,6 @@
     <Content Include="Images\logo.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="logo.ico" />
-    <Content Include="MagazynSpedycji.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>

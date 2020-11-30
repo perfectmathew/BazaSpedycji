@@ -31,7 +31,16 @@ namespace Magazyn_Spedycji
             DeleteIDBOX.Show();
             DeleteIndex.Show();
             UserIDText.Show();
-            this.klienciTableAdapter.Fill(this.magazynSpedycjiDataSet.Klienci);
+            con.Open();
+            OleDbCommand createKlienci = new OleDbCommand();
+            createKlienci.Connection = con;
+            string query = "Select * from Klienci";
+            createKlienci.CommandText = query;
+            OleDbDataAdapter klienci = new OleDbDataAdapter(createKlienci);
+            DataTable KlienciTable = new DataTable();
+            klienci.Fill(KlienciTable);
+            dataGridView1.DataSource = KlienciTable;
+            con.Close();
 
         }
 

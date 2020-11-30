@@ -16,7 +16,6 @@ C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.
 C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.CarrierPanel.resources
 C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\bin\Debug\MagazynSpedycji.mdb
 C:\Users\Perfectamthew\source\repos\Magazyn Spedycji\obj\Debug\Magazyn_Spedycji.SingUp.resources
-C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\MagazynSpedycji.mdb
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.exe.config
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.exe
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.pdb

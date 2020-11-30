@@ -42,17 +42,6 @@
             this.RaportsBox = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miastoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wojewodztwoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kodPocztowyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.krajDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazynSpedycjiDataSet = new Magazyn_Spedycji.MagazynSpedycjiDataSet();
             this.klienciTableAdapter = new Magazyn_Spedycji.MagazynSpedycjiDataSetTableAdapters.KlienciTableAdapter();
@@ -135,101 +124,10 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nazwiskoDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.telefonDataGridViewTextBoxColumn,
-            this.adresDataGridViewTextBoxColumn,
-            this.miastoDataGridViewTextBoxColumn,
-            this.wojewodztwoDataGridViewTextBoxColumn,
-            this.kodPocztowyDataGridViewTextBoxColumn,
-            this.krajDataGridViewTextBoxColumn,
-            this.loginDataGridViewTextBoxColumn,
-            this.hasloDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.klienciBindingSource;
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            resources.ApplyResources(this.iDDataGridViewTextBoxColumn, "iDDataGridViewTextBoxColumn");
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazwiskoDataGridViewTextBoxColumn
-            // 
-            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
-            resources.ApplyResources(this.nazwiskoDataGridViewTextBoxColumn, "nazwiskoDataGridViewTextBoxColumn");
-            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
-            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            resources.ApplyResources(this.emailDataGridViewTextBoxColumn, "emailDataGridViewTextBoxColumn");
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonDataGridViewTextBoxColumn
-            // 
-            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
-            resources.ApplyResources(this.telefonDataGridViewTextBoxColumn, "telefonDataGridViewTextBoxColumn");
-            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
-            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // adresDataGridViewTextBoxColumn
-            // 
-            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
-            resources.ApplyResources(this.adresDataGridViewTextBoxColumn, "adresDataGridViewTextBoxColumn");
-            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
-            this.adresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // miastoDataGridViewTextBoxColumn
-            // 
-            this.miastoDataGridViewTextBoxColumn.DataPropertyName = "Miasto";
-            resources.ApplyResources(this.miastoDataGridViewTextBoxColumn, "miastoDataGridViewTextBoxColumn");
-            this.miastoDataGridViewTextBoxColumn.Name = "miastoDataGridViewTextBoxColumn";
-            this.miastoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wojewodztwoDataGridViewTextBoxColumn
-            // 
-            this.wojewodztwoDataGridViewTextBoxColumn.DataPropertyName = "Wojewodztwo";
-            resources.ApplyResources(this.wojewodztwoDataGridViewTextBoxColumn, "wojewodztwoDataGridViewTextBoxColumn");
-            this.wojewodztwoDataGridViewTextBoxColumn.Name = "wojewodztwoDataGridViewTextBoxColumn";
-            this.wojewodztwoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kodPocztowyDataGridViewTextBoxColumn
-            // 
-            this.kodPocztowyDataGridViewTextBoxColumn.DataPropertyName = "KodPocztowy";
-            resources.ApplyResources(this.kodPocztowyDataGridViewTextBoxColumn, "kodPocztowyDataGridViewTextBoxColumn");
-            this.kodPocztowyDataGridViewTextBoxColumn.Name = "kodPocztowyDataGridViewTextBoxColumn";
-            this.kodPocztowyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // krajDataGridViewTextBoxColumn
-            // 
-            this.krajDataGridViewTextBoxColumn.DataPropertyName = "Kraj";
-            resources.ApplyResources(this.krajDataGridViewTextBoxColumn, "krajDataGridViewTextBoxColumn");
-            this.krajDataGridViewTextBoxColumn.Name = "krajDataGridViewTextBoxColumn";
-            this.krajDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // loginDataGridViewTextBoxColumn
-            // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
-            resources.ApplyResources(this.loginDataGridViewTextBoxColumn, "loginDataGridViewTextBoxColumn");
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hasloDataGridViewTextBoxColumn
-            // 
-            this.hasloDataGridViewTextBoxColumn.DataPropertyName = "Haslo";
-            resources.ApplyResources(this.hasloDataGridViewTextBoxColumn, "hasloDataGridViewTextBoxColumn");
-            this.hasloDataGridViewTextBoxColumn.Name = "hasloDataGridViewTextBoxColumn";
-            this.hasloDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // klienciBindingSource
             // 
@@ -296,17 +194,6 @@
         private MagazynSpedycjiDataSet magazynSpedycjiDataSet;
         private System.Windows.Forms.BindingSource klienciBindingSource;
         private MagazynSpedycjiDataSetTableAdapters.KlienciTableAdapter klienciTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn miastoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wojewodztwoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kodPocztowyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn krajDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hasloDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label UserIDText;
     }
 }
