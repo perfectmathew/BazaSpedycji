@@ -705,76 +705,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>AdminPanel</value>
   </data>
-  <data name="&gt;&gt;magazynSpedycjiDataSet.Name" xml:space="preserve">
-    <value>magazynSpedycjiDataSet</value>
-  </data>
-  <data name="&gt;&gt;magazynSpedycjiDataSet.Type" xml:space="preserve">
-    <value>Magazyn_Spedycji.MagazynSpedycjiDataSet, MagazynSpedycjiDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;klienciBindingSource.Name" xml:space="preserve">
-    <value>klienciBindingSource</value>
-  </data>
-  <data name="&gt;&gt;klienciBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;klienciTableAdapter.Name" xml:space="preserve">
-    <value>klienciTableAdapter</value>
-  </data>
-  <data name="&gt;&gt;klienciTableAdapter.Type" xml:space="preserve">
-    <value>Magazyn_Spedycji.MagazynSpedycjiDataSetTableAdapters.KlienciTableAdapter, MagazynSpedycjiDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;iDDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>iDDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;iDDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;hasloDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>hasloDataGridViewTextBoxColumn</value>
+  <data name="&gt;&gt;nazwiskoDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>nazwiskoDataGridViewTextBoxColumn</value>
   </data>
-  <data name="&gt;&gt;hasloDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;loginDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>loginDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;loginDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;krajDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>krajDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;krajDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;kodPocztowyDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>kodPocztowyDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;kodPocztowyDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wojewodztwoDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>wojewodztwoDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;wojewodztwoDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;miastoDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>miastoDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;miastoDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;adresDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>adresDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;adresDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;telefonDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>telefonDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;telefonDataGridViewTextBoxColumn.Type" xml:space="preserve">
+  <data name="&gt;&gt;nazwiskoDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;emailDataGridViewTextBoxColumn.Name" xml:space="preserve">
@@ -783,11 +723,71 @@
   <data name="&gt;&gt;emailDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nazwiskoDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>nazwiskoDataGridViewTextBoxColumn</value>
+  <data name="&gt;&gt;telefonDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>telefonDataGridViewTextBoxColumn</value>
   </data>
-  <data name="&gt;&gt;nazwiskoDataGridViewTextBoxColumn.Type" xml:space="preserve">
+  <data name="&gt;&gt;telefonDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;adresDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>adresDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;adresDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;miastoDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>miastoDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;miastoDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wojewodztwoDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>wojewodztwoDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;wojewodztwoDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kodPocztowyDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>kodPocztowyDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;kodPocztowyDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;krajDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>krajDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;krajDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loginDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>loginDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;loginDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hasloDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>hasloDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;hasloDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;klienciBindingSource.Name" xml:space="preserve">
+    <value>klienciBindingSource</value>
+  </data>
+  <data name="&gt;&gt;klienciBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;magazynSpedycjiDataSet.Name" xml:space="preserve">
+    <value>magazynSpedycjiDataSet</value>
+  </data>
+  <data name="&gt;&gt;magazynSpedycjiDataSet.Type" xml:space="preserve">
+    <value>Magazyn_Spedycji.MagazynSpedycjiDataSet, MagazynSpedycjiDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;klienciTableAdapter.Name" xml:space="preserve">
+    <value>klienciTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;klienciTableAdapter.Type" xml:space="preserve">
+    <value>Magazyn_Spedycji.MagazynSpedycjiDataSetTableAdapters.KlienciTableAdapter, MagazynSpedycjiDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AdminPanel</value>
