@@ -76,6 +76,12 @@
     <Compile Include="CarrierPanel.Designer.cs">
       <DependentUpon>CarrierPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProduktEdycja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProduktEdycja.Designer.cs">
+      <DependentUpon>ProduktEdycja.cs</DependentUpon>
+    </Compile>
     <Compile Include="MagazynSpedycjiDataSet.cs">
       <DependentUpon>MagazynSpedycjiDataSet.xsd</DependentUpon>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarrierPanel.resx">
       <DependentUpon>CarrierPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProduktEdycja.resx">
+      <DependentUpon>ProduktEdycja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SingUp.resx">
       <DependentUpon>SingUp.cs</DependentUpon>

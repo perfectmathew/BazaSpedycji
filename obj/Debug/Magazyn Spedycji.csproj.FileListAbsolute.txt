@@ -33,3 +33,43 @@ C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\pl\Magazyn Spedycji.resources.dll
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.exe
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.pdb
+C:\Users\wojna\Desktop\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.exe.config
+C:\Users\wojna\Desktop\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.exe
+C:\Users\wojna\Desktop\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.pdb
+C:\Users\wojna\Desktop\BazaSpedycji-main\bin\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.AdminPanel.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.CarrierPanel.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.SingUp.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.MagazynSpedycji.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.Properties.Resources.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.UserPanel.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.AdminPanel.pl.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csproj.GenerateResource.cache
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csproj.CoreCompileInputs.cache
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.exe
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.pdb
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.ProduktEdycja.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.exe
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.pdb
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.exe
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.pdb
+G:\BazaSpedycji-main_03.12.2020\bin\Debug\Magazyn Spedycji.exe.config
+G:\BazaSpedycji-main_03.12.2020\bin\Debug\Magazyn Spedycji.exe
+G:\BazaSpedycji-main_03.12.2020\bin\Debug\Magazyn Spedycji.pdb
+G:\BazaSpedycji-main_03.12.2020\bin\Debug\pl\Magazyn Spedycji.resources.dll
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn_Spedycji.AdminPanel.resources
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn_Spedycji.CarrierPanel.resources
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn_Spedycji.ProduktEdycja.resources
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn_Spedycji.SingUp.resources
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn_Spedycji.MagazynSpedycji.resources
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn_Spedycji.Properties.Resources.resources
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn_Spedycji.UserPanel.resources
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn_Spedycji.AdminPanel.pl.resources
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.csproj.GenerateResource.cache
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.csproj.CoreCompileInputs.cache
+G:\BazaSpedycji-main_03.12.2020\obj\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.ProduktEdycja.resources

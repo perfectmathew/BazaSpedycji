@@ -10,30 +10,37 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 namespace Magazyn_Spedycji
 {
-    
     public partial class CarrierPanel : Form
     {
-      //  string CarrierValue;
+        string CarrierValue;
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
         public CarrierPanel()
         {
             InitializeComponent();
-           
         }
-      /*  public void ab(string LoginValue)
+         public void ab(string LoginValue)
         {
-            //CarrierValue = LoginValue.ToString();
-        }*/ //Funkcja pobiera login 
+            CarrierValue = LoginValue.ToString();
+        }
         private void CarrierPanel_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'magazynSpedycjiDataSet.Zamowienia' . Możesz go przenieść lub usunąć.
-            this.zamowieniaTableAdapter.Fill(this.magazynSpedycjiDataSet.Zamowienia);
+            MessageBox.Show(CarrierValue);
+            con.Open();
+            OleDbCommand createSpedytorzy = new OleDbCommand();
+            createSpedytorzy.Connection = con;
+            string queryDostawcy = "Select * from Zamowienia where IdSpedytora="+CarrierValue+"";
+            createSpedytorzy.CommandText = queryDostawcy;
+            OleDbDataAdapter dostawcy = new OleDbDataAdapter(createSpedytorzy);
+            DataTable DostawcyTable = new DataTable();
+            dostawcy.Fill(DostawcyTable);
+            dataGridView1.DataSource = DostawcyTable;
+            con.Close();
 
         }
 
         private void UpdateOrderButton_Click(object sender, EventArgs e)
         {
-          //  MessageBox.Show(CarrierValue.ToString()); //
+           
                
             if (IDZamField.Text!="" || StanZamField.Text=="1" || StanZamField.Text == "2" || StanZamField.Text == "3")
             {

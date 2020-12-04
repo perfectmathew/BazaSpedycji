@@ -26,8 +26,8 @@ namespace Magazyn_Spedycji.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\\Users\\Perfectamthew\\Documents\\M" +
-            "agazynSpedycji.accdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Perfectamthew\\Documents\\Ma" +
+            "gazynSpedycji.accdb")]
         public string MagazynSpedycjiConnectionString {
             get {
                 return ((string)(this["MagazynSpedycjiConnectionString"]));
