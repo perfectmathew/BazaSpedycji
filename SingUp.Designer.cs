@@ -86,7 +86,7 @@
             this.SingUpButton.Name = "SingUpButton";
             this.SingUpButton.Size = new System.Drawing.Size(100, 29);
             this.SingUpButton.TabIndex = 5;
-            this.SingUpButton.Text = "Sing Up";
+            this.SingUpButton.Text = "Zarejestruj";
             this.SingUpButton.UseVisualStyleBackColor = true;
             this.SingUpButton.Click += new System.EventHandler(this.SingUpButton_Click);
             // 
@@ -95,18 +95,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(84, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "FirstName";
+            this.label1.Text = "Imię";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(84, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "LastName";
+            this.label2.Text = "Nazwisko";
             // 
             // label3
             // 
@@ -131,9 +131,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(190, 62);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Password";
+            this.label5.Text = "Hasło";
             // 
             // PassSwitch
             // 
@@ -151,7 +151,7 @@
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(206, 23);
             this.ExitButton.TabIndex = 12;
-            this.ExitButton.Text = "I\'ve already registered";
+            this.ExitButton.Text = "Już mam konto";
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 

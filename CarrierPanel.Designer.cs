@@ -38,8 +38,8 @@
             this.IDZamText = new System.Windows.Forms.Label();
             this.StanZamText = new System.Windows.Forms.Label();
             this.IDZamField = new System.Windows.Forms.TextBox();
-            this.StanZamField = new System.Windows.Forms.TextBox();
             this.UpdateOrderButton = new System.Windows.Forms.Button();
+            this.StatusOrderCombo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource)).BeginInit();
@@ -106,30 +106,34 @@
             this.IDZamField.Size = new System.Drawing.Size(100, 20);
             this.IDZamField.TabIndex = 10;
             // 
-            // StanZamField
-            // 
-            this.StanZamField.Location = new System.Drawing.Point(41, 243);
-            this.StanZamField.Name = "StanZamField";
-            this.StanZamField.Size = new System.Drawing.Size(100, 20);
-            this.StanZamField.TabIndex = 11;
-            // 
             // UpdateOrderButton
             // 
             this.UpdateOrderButton.Location = new System.Drawing.Point(41, 269);
             this.UpdateOrderButton.Name = "UpdateOrderButton";
             this.UpdateOrderButton.Size = new System.Drawing.Size(100, 23);
             this.UpdateOrderButton.TabIndex = 12;
-            this.UpdateOrderButton.Text = "Update";
+            this.UpdateOrderButton.Text = "Zaktualizuj";
             this.UpdateOrderButton.UseVisualStyleBackColor = true;
             this.UpdateOrderButton.Click += new System.EventHandler(this.UpdateOrderButton_Click);
+            // 
+            // StatusOrderCombo
+            // 
+            this.StatusOrderCombo.FormattingEnabled = true;
+            this.StatusOrderCombo.Items.AddRange(new object[] {
+            "W drodze",
+            "Zamknięte"});
+            this.StatusOrderCombo.Location = new System.Drawing.Point(41, 242);
+            this.StatusOrderCombo.Name = "StatusOrderCombo";
+            this.StatusOrderCombo.Size = new System.Drawing.Size(100, 21);
+            this.StatusOrderCombo.TabIndex = 13;
             // 
             // CarrierPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 511);
+            this.Controls.Add(this.StatusOrderCombo);
             this.Controls.Add(this.UpdateOrderButton);
-            this.Controls.Add(this.StanZamField);
             this.Controls.Add(this.IDZamField);
             this.Controls.Add(this.StanZamText);
             this.Controls.Add(this.IDZamText);
@@ -160,7 +164,7 @@
         private System.Windows.Forms.Label IDZamText;
         private System.Windows.Forms.Label StanZamText;
         private System.Windows.Forms.TextBox IDZamField;
-        private System.Windows.Forms.TextBox StanZamField;
         private System.Windows.Forms.Button UpdateOrderButton;
+        private System.Windows.Forms.ComboBox StatusOrderCombo;
     }
 }

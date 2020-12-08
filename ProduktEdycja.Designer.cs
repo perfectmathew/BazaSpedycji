@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProduktEdycja));
             this.id_prod = new System.Windows.Forms.TextBox();
             this.kod_prod = new System.Windows.Forms.TextBox();
             this.ilosc_prod = new System.Windows.Forms.TextBox();
-            this.cenakat_prod = new System.Windows.Forms.TextBox();
             this.koszt_prod = new System.Windows.Forms.TextBox();
             this.opis_prod = new System.Windows.Forms.TextBox();
             this.nazwa_prod = new System.Windows.Forms.TextBox();
@@ -41,15 +41,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.edycja_rekordu = new System.Windows.Forms.Button();
             this.dodanie_rekordu = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iddost_prod = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.sort_rdk = new System.Windows.Forms.Button();
             this.usun_rdk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -70,17 +66,10 @@
             // 
             // ilosc_prod
             // 
-            this.ilosc_prod.Location = new System.Drawing.Point(12, 168);
+            this.ilosc_prod.Location = new System.Drawing.Point(12, 142);
             this.ilosc_prod.Name = "ilosc_prod";
             this.ilosc_prod.Size = new System.Drawing.Size(100, 20);
             this.ilosc_prod.TabIndex = 2;
-            // 
-            // cenakat_prod
-            // 
-            this.cenakat_prod.Location = new System.Drawing.Point(12, 142);
-            this.cenakat_prod.Name = "cenakat_prod";
-            this.cenakat_prod.Size = new System.Drawing.Size(100, 20);
-            this.cenakat_prod.TabIndex = 3;
             // 
             // koszt_prod
             // 
@@ -106,11 +95,10 @@
             // wycofane_prod
             // 
             this.wycofane_prod.AutoSize = true;
-            this.wycofane_prod.Location = new System.Drawing.Point(12, 194);
+            this.wycofane_prod.Location = new System.Drawing.Point(97, 168);
             this.wycofane_prod.Name = "wycofane_prod";
-            this.wycofane_prod.Size = new System.Drawing.Size(80, 17);
+            this.wycofane_prod.Size = new System.Drawing.Size(15, 14);
             this.wycofane_prod.TabIndex = 7;
-            this.wycofane_prod.Text = "checkBox1";
             this.wycofane_prod.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -154,40 +142,32 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(140, 123);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.Size = new System.Drawing.Size(98, 13);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Koszt standardowy";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(140, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Cena katalogowa";
+            this.label5.Text = "Cena Jednostkowa";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(140, 171);
+            this.label7.Location = new System.Drawing.Point(140, 145);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Ilosc";
+            this.label7.Text = "Ilość";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(140, 198);
+            this.label8.Location = new System.Drawing.Point(21, 168);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
+            this.label8.Size = new System.Drawing.Size(74, 13);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Wycofany";
+            this.label8.Text = "W sprzedaży?";
             // 
             // edycja_rekordu
             // 
-            this.edycja_rekordu.Location = new System.Drawing.Point(118, 240);
+            this.edycja_rekordu.Location = new System.Drawing.Point(118, 206);
             this.edycja_rekordu.Name = "edycja_rekordu";
             this.edycja_rekordu.Size = new System.Drawing.Size(112, 53);
             this.edycja_rekordu.TabIndex = 16;
@@ -197,7 +177,7 @@
             // 
             // dodanie_rekordu
             // 
-            this.dodanie_rekordu.Location = new System.Drawing.Point(6, 240);
+            this.dodanie_rekordu.Location = new System.Drawing.Point(6, 206);
             this.dodanie_rekordu.Name = "dodanie_rekordu";
             this.dodanie_rekordu.Size = new System.Drawing.Size(106, 53);
             this.dodanie_rekordu.TabIndex = 17;
@@ -214,35 +194,9 @@
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // iddost_prod
-            // 
-            this.iddost_prod.Location = new System.Drawing.Point(12, 214);
-            this.iddost_prod.Name = "iddost_prod";
-            this.iddost_prod.Size = new System.Drawing.Size(100, 20);
-            this.iddost_prod.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(140, 217);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "id_dostawcy";
-            // 
-            // sort_rdk
-            // 
-            this.sort_rdk.Location = new System.Drawing.Point(6, 299);
-            this.sort_rdk.Name = "sort_rdk";
-            this.sort_rdk.Size = new System.Drawing.Size(112, 53);
-            this.sort_rdk.TabIndex = 21;
-            this.sort_rdk.Text = "Sortuj rekordy ";
-            this.sort_rdk.UseVisualStyleBackColor = true;
-            this.sort_rdk.Click += new System.EventHandler(this.sort_rdk_Click);
-            // 
             // usun_rdk
             // 
-            this.usun_rdk.Location = new System.Drawing.Point(124, 299);
+            this.usun_rdk.Location = new System.Drawing.Point(6, 265);
             this.usun_rdk.Name = "usun_rdk";
             this.usun_rdk.Size = new System.Drawing.Size(106, 53);
             this.usun_rdk.TabIndex = 22;
@@ -256,15 +210,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1177, 450);
             this.Controls.Add(this.usun_rdk);
-            this.Controls.Add(this.sort_rdk);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.iddost_prod);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dodanie_rekordu);
             this.Controls.Add(this.edycja_rekordu);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -274,11 +224,13 @@
             this.Controls.Add(this.nazwa_prod);
             this.Controls.Add(this.opis_prod);
             this.Controls.Add(this.koszt_prod);
-            this.Controls.Add(this.cenakat_prod);
             this.Controls.Add(this.ilosc_prod);
             this.Controls.Add(this.kod_prod);
             this.Controls.Add(this.id_prod);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProduktEdycja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -292,7 +244,6 @@
         private System.Windows.Forms.TextBox id_prod;
         private System.Windows.Forms.TextBox kod_prod;
         private System.Windows.Forms.TextBox ilosc_prod;
-        private System.Windows.Forms.TextBox cenakat_prod;
         private System.Windows.Forms.TextBox koszt_prod;
         private System.Windows.Forms.TextBox opis_prod;
         private System.Windows.Forms.TextBox nazwa_prod;
@@ -302,15 +253,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button edycja_rekordu;
         private System.Windows.Forms.Button dodanie_rekordu;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox iddost_prod;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button sort_rdk;
         private System.Windows.Forms.Button usun_rdk;
     }
 }

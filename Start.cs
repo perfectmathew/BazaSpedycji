@@ -13,35 +13,50 @@ namespace Magazyn_Spedycji
   
     public partial class MagazynSpedycji : Form
     {
-     
         private AdminPanel adminPanel;
         private CarrierPanel carrierPanel;
         private UserPanel userPanel;
         private SingUp SingUp;
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
-        public MagazynSpedycji()
+        private void hideloginelement()
         {
-            InitializeComponent();
             label1.Hide();
             label2.Hide();
             label3.Hide();
             loginString.Hide();
             login_register.Hide();
             register_password.Hide();
+            PasswordReval.Hide();
             UserAccessL.Hide();
             LoginButton.Hide();
         }
-
+        private void showloginelement()
+        {
+            label1.Show();
+            label2.Show();
+            label3.Show();
+            loginString.Show();
+            login_register.Show();
+            register_password.Show();
+            PasswordReval.Show();
+            UserAccessL.Show();
+            LoginButton.Show();
+        }
+        public MagazynSpedycji()
+        {
+            InitializeComponent();
+            hideloginelement();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            //SingUp.Hide();
+
            if (UserAccessL.SelectedIndex == -1)
             {
                 MessageBox.Show("Wybierz poziom uprawnień!");
             }
             if (UserAccessL.SelectedIndex == 0)
             {
-                //kod na wejście do innych formularzy 
+               
                 con.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = con;
@@ -54,15 +69,11 @@ namespace Magazyn_Spedycji
                 }
                 if (count == 1)
                 {
-                    
-                    MessageBox.Show("Witamy w panelu administracyjnym!");
                     this.Hide();
-
                     AdminPanel adminPanel = new AdminPanel();
                     adminPanel.ShowDialog();
                     adminPanel = null;
                     this.Show();
-
                 }
              else
                 {
@@ -71,6 +82,38 @@ namespace Magazyn_Spedycji
                 con.Close();
             }
             if (UserAccessL.SelectedIndex == 1)
+            {
+                con.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = con;
+                command.CommandText = "select * from Klienci where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                OleDbDataReader reader = command.ExecuteReader();
+                int count = 0;
+                while (reader.Read())
+                {
+                    count = count + 1;
+                }
+                if (count == 1)
+                {
+                    OleDbCommand newcarrier = new OleDbCommand();
+                    newcarrier.Connection = con;
+                    newcarrier.CommandText = "select ID from Klienci where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                    Int32 IDK = (Int32)newcarrier.ExecuteScalar();
+                    this.Hide();
+                    UserPanel user = new UserPanel();
+                   user.UserCondiction(IDK.ToString());
+                    user.ShowDialog();
+                    user = null;
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Nieprawidłowy login lub hasło!");
+                }
+                con.Close();
+
+            }
+            if (UserAccessL.SelectedIndex == 2)
             {
                 con.Open();
                 OleDbCommand command = new OleDbCommand();
@@ -91,46 +134,10 @@ namespace Magazyn_Spedycji
                     newcarrier.CommandText = "select ID from Spedytorzy where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
                     Int32 IDK = (Int32)newcarrier.ExecuteScalar();
                     this.Hide();
-
-
                     CarrierPanel carrier = new CarrierPanel();
-                   carrier.ab(IDK.ToString());
+                    carrier.ab(IDK.ToString());
                     carrier.ShowDialog();
                     carrier = null;
-                    this.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Nieprawidłowy login lub hasło!");
-                }
-                con.Close();
-
-            }
-            if (UserAccessL.SelectedIndex == 2)
-            {
-                /*  this.Hide();
-                  var UserPanel = new UserPanel();
-                  UserPanel.Closed += (s, args) => this.Close();
-                  UserPanel.Show();*/
-                con.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = con;
-                command.CommandText = "select * from Klienci where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
-                OleDbDataReader reader = command.ExecuteReader();
-                int count = 0;
-                while (reader.Read())
-                {
-
-                    count = count + 1;
-
-                }
-                if (count == 1)
-                {
-                    this.Hide();
-
-                    UserPanel user = new UserPanel();
-                    user.ShowDialog();
-                    user = null;
                     this.Show();
                 }
                 else
@@ -141,19 +148,10 @@ namespace Magazyn_Spedycji
             }
         
         }
-
         private void SingInSwitch_Click(object sender, EventArgs e)
         {
-            label1.Show();
-            label2.Show();
-            label3.Show();
-            loginString.Show();
-            login_register.Show();
-            register_password.Show();
-            UserAccessL.Show();
-            LoginButton.Show();
+            showloginelement();
         }
-
         private void SingUpSwitch_Click(object sender, EventArgs e)
         {
 
@@ -164,22 +162,21 @@ namespace Magazyn_Spedycji
             singUp = null;
             this.Show();
         }
-
-        private void MagazynSpedycji_Load(object sender, EventArgs e)
-        {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'magazynSpedycjiDataSet.Klienci' . Możesz go przenieść lub usunąć.
-       
-
-        }
-
         private void DevButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             AdminPanel adminPanel = new AdminPanel();
             adminPanel.ShowDialog();
             adminPanel = null;
             this.Show();
+        }
+        private void PasswordReval_CheckedChanged(object sender, EventArgs e)
+        {
+            if (PasswordReval.Checked)
+            {
+                register_password.UseSystemPasswordChar = false;
+            }
+            else register_password.UseSystemPasswordChar = true;
         }
     }
 }

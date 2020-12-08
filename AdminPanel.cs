@@ -19,108 +19,14 @@ namespace Magazyn_Spedycji
         {
             InitializeComponent();
             dataGridView1.Hide();
-            DeleteIDBOX.Hide();
-            DeleteIndex.Hide();
-            UserIDText.Hide();
         }
 
-      
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            dataGridView1.Show();
-            DeleteIDBOX.Show();
-            DeleteIndex.Show();
-            UserIDText.Show();
-            con.Open();
-            OleDbCommand createKlienci = new OleDbCommand();
-            createKlienci.Connection = con;
-            string query = "Select * from Klienci";
-            createKlienci.CommandText = query;
-            OleDbDataAdapter klienci = new OleDbDataAdapter(createKlienci);
-            DataTable KlienciTable = new DataTable();
-            klienci.Fill(KlienciTable);
-            dataGridView1.DataSource = KlienciTable;
-            con.Close();
-
-        }
-
-
-        private void AdminPanel_Load(object sender, EventArgs e)
-        {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'magazynSpedycjiDataSet.Produkty' . Możesz go przenieść lub usunąć.
-
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'magazynSpedycjiDataSet.Klienci' . Możesz go przenieść lub usunąć.
-
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'magazynSpedycjiDataSet.Klienci' . Możesz go przenieść lub usunąć.
-
-
-
-        }
-
-        private void CarrierButton_Click(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void DeleteIndex_Click(object sender, EventArgs e)
-        {
-            OleDbCommand chcek = new OleDbCommand();
-            if (DeleteIDBOX.Text == "")
-            {
-                MessageBox.Show("Invalid value at UserID Box ");
-            }
-            else
-            {
-                try
-                {
-
-                    con.Open();
-                    OleDbCommand command = new OleDbCommand();
-                    OleDbCommand search = new OleDbCommand();
-                    command.Connection = con;
-              
-                    string query = "delete from Klienci where ID=" + DeleteIDBOX.Text + "";
-                    command.CommandText = query;
-                    search.Connection = con;
-                    search.CommandText = "SELECT * from Klienci where ID=" + DeleteIDBOX.Text + "";
-                    OleDbDataReader reader = search.ExecuteReader();
-                    int count = 0;
-                    while (reader.Read())
-                    {
-                        count = count + 1;
-                    }
-                    if (count == 0)
-                    {
-                        MessageBox.Show("Użytkownik nie istnieje!");
-                    }
-                    else
-                    {
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Użytkownik Usunięty!");
-                    }
-                  
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Napotkany problem: " + ex);
-                }
-                con.Close();
-            }
-        }
-        
-   
-        
         private void pokaz_tabele_Click(object sender, EventArgs e)
         {
             dataGridView1.Show();
-            DeleteIDBOX.Show();
-            DeleteIndex.Show();
-            UserIDText.Show();
             con.Open();
             //OleDbCommand createProdukty = new OleDbCommand();
             //createProdukty.Connection = con;
-
             switch (tabeleBox.SelectedIndex)
             {
                 case 0:
@@ -133,25 +39,22 @@ namespace Magazyn_Spedycji
                     produkty.Fill(tabelaProdukty);
                     dataGridView1.DataSource = tabelaProdukty;
                     con.Close();
-
                     break;
-
                 case 1:
                     OleDbCommand createKlienci = new OleDbCommand();
                     createKlienci.Connection = con;
-                    string queryKlienci = "Select * from Klienci";
+                    string queryKlienci = "Select * from Klienci order by ID ASC ";
                     createKlienci.CommandText = queryKlienci;
                     OleDbDataAdapter klienci = new OleDbDataAdapter(createKlienci);
                     DataTable KlienciTable = new DataTable();
                     klienci.Fill(KlienciTable);
                     dataGridView1.DataSource = KlienciTable;
                     con.Close();
-
                     break;
                 case 2:
                     OleDbCommand createDostawcy = new OleDbCommand();
                     createDostawcy.Connection = con;
-                    string queryDostawcy = "Select * from Dostawcy";
+                    string queryDostawcy = "Select * from Spedytorzy";
                     createDostawcy.CommandText = queryDostawcy;
                     OleDbDataAdapter dostawcy = new OleDbDataAdapter(createDostawcy);
                     DataTable DostawcyTable = new DataTable();
@@ -159,11 +62,10 @@ namespace Magazyn_Spedycji
                     dataGridView1.DataSource = DostawcyTable;
                     con.Close();
                     break;
-
                 case 3:
                     OleDbCommand createPracownicy = new OleDbCommand();
                     createPracownicy.Connection = con;
-                    string queryPracownicy = "Select * from Pracownicy";
+                    string queryPracownicy = "Select * from Magazyn";
                     createPracownicy.CommandText = queryPracownicy;
                     OleDbDataAdapter pracownicy = new OleDbDataAdapter(createPracownicy);
                     DataTable PracownicyTable = new DataTable();
@@ -171,7 +73,6 @@ namespace Magazyn_Spedycji
                     dataGridView1.DataSource = PracownicyTable;
                     con.Close();
                     break;
-
                 case 4:
                     OleDbCommand createZamowienia = new OleDbCommand();
                     createZamowienia.Connection = con;
@@ -183,37 +84,21 @@ namespace Magazyn_Spedycji
                     dataGridView1.DataSource = ZamowieniaTable;
                     con.Close();
                     break;
-
-
             }
-
-
-
-
-
-
-
-
-
         }
 
         private void edycja_rdk_Click(object sender, EventArgs e)
         {
-
             switch (tabeleBox.SelectedIndex)
             {
                 case 0:
                     this.Hide();
-
                     ProduktEdycja produktedycja = new ProduktEdycja();
                     produktedycja.ShowDialog();
                     produktedycja = null;
                     this.Show();
-
                     break;
-
-
-
+               // case 1:
             }
 
         }

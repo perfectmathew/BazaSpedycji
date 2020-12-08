@@ -41,14 +41,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.PasswordReval = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // register_password
             // 
-            this.register_password.Location = new System.Drawing.Point(817, 416);
+            this.register_password.Location = new System.Drawing.Point(822, 422);
             this.register_password.Name = "register_password";
-            this.register_password.PasswordChar = '*';
             this.register_password.Size = new System.Drawing.Size(123, 20);
             this.register_password.TabIndex = 0;
             this.register_password.UseSystemPasswordChar = true;
@@ -56,7 +56,7 @@
             // login_register
             // 
             this.login_register.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.login_register.Location = new System.Drawing.Point(817, 380);
+            this.login_register.Location = new System.Drawing.Point(822, 386);
             this.login_register.Name = "login_register";
             this.login_register.Size = new System.Drawing.Size(123, 20);
             this.login_register.TabIndex = 2;
@@ -66,9 +66,9 @@
             this.UserAccessL.FormattingEnabled = true;
             this.UserAccessL.Items.AddRange(new object[] {
             "Pracownik",
-            "Spedytor",
-            "Klient"});
-            this.UserAccessL.Location = new System.Drawing.Point(817, 451);
+            "Klient",
+            "Spedytor"});
+            this.UserAccessL.Location = new System.Drawing.Point(822, 457);
             this.UserAccessL.Name = "UserAccessL";
             this.UserAccessL.Size = new System.Drawing.Size(123, 21);
             this.UserAccessL.TabIndex = 3;
@@ -78,7 +78,7 @@
             this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoginButton.Location = new System.Drawing.Point(817, 478);
+            this.LoginButton.Location = new System.Drawing.Point(822, 484);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(123, 23);
             this.LoginButton.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             this.loginString.AutoSize = true;
             this.loginString.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.loginString.Location = new System.Drawing.Point(843, 340);
+            this.loginString.Location = new System.Drawing.Point(848, 346);
             this.loginString.Name = "loginString";
             this.loginString.Size = new System.Drawing.Size(70, 25);
             this.loginString.TabIndex = 6;
@@ -140,35 +140,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(814, 364);
+            this.label1.Location = new System.Drawing.Point(819, 370);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Username";
+            this.label1.Text = "Login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(815, 401);
+            this.label2.Location = new System.Drawing.Point(820, 407);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Password";
+            this.label2.Text = "Hasło";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(815, 436);
+            this.label3.Location = new System.Drawing.Point(820, 442);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Jesteś:";
+            // 
+            // PasswordReval
+            // 
+            this.PasswordReval.AutoSize = true;
+            this.PasswordReval.Location = new System.Drawing.Point(951, 425);
+            this.PasswordReval.Name = "PasswordReval";
+            this.PasswordReval.Size = new System.Drawing.Size(15, 14);
+            this.PasswordReval.TabIndex = 13;
+            this.PasswordReval.UseVisualStyleBackColor = true;
+            this.PasswordReval.CheckedChanged += new System.EventHandler(this.PasswordReval_CheckedChanged);
             // 
             // MagazynSpedycji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 511);
+            this.Controls.Add(this.PasswordReval);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -186,7 +197,6 @@
             this.Name = "MagazynSpedycji";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Secret Shipping | Main Menu";
-            this.Load += new System.EventHandler(this.MagazynSpedycji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -207,6 +217,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox PasswordReval;
     }
 }
 

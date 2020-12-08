@@ -151,55 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="DeleteIDBOX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>881, 444</value>
-  </data>
-  <data name="DeleteIDBOX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="DeleteIDBOX.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;DeleteIDBOX.Name" xml:space="preserve">
-    <value>DeleteIDBOX</value>
-  </data>
-  <data name="&gt;&gt;DeleteIDBOX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DeleteIDBOX.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DeleteIDBOX.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="DeleteIndex.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="DeleteIndex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>881, 470</value>
-  </data>
-  <data name="DeleteIndex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 23</value>
-  </data>
-  <data name="DeleteIndex.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="DeleteIndex.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="&gt;&gt;DeleteIndex.Name" xml:space="preserve">
-    <value>DeleteIndex</value>
-  </data>
-  <data name="&gt;&gt;DeleteIndex.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DeleteIndex.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DeleteIndex.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 8</value>
@@ -220,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <metadata name="klienciBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>205, 17</value>
@@ -228,42 +180,9 @@
   <metadata name="magazynSpedycjiDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="magazynSpedycjiDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="klienciTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>370, 17</value>
   </metadata>
-  <data name="UserIDText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UserIDText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="UserIDText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>835, 447</value>
-  </data>
-  <data name="UserIDText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
-  </data>
-  <data name="UserIDText.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="UserIDText.Text" xml:space="preserve">
-    <value>UserID:</value>
-  </data>
-  <data name="&gt;&gt;UserIDText.Name" xml:space="preserve">
-    <value>UserIDText</value>
-  </data>
-  <data name="&gt;&gt;UserIDText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UserIDText.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;UserIDText.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="pokaz_tabele.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -277,7 +196,7 @@
     <value>20</value>
   </data>
   <data name="pokaz_tabele.Text" xml:space="preserve">
-    <value>Pokaz</value>
+    <value>Pokaż</value>
   </data>
   <data name="&gt;&gt;pokaz_tabele.Name" xml:space="preserve">
     <value>pokaz_tabele</value>
@@ -289,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pokaz_tabele.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="tabeleBox.Items" xml:space="preserve">
     <value>Produkty</value>
@@ -298,10 +217,10 @@
     <value>Klienci</value>
   </data>
   <data name="tabeleBox.Items2" xml:space="preserve">
-    <value>Dostawcy</value>
+    <value>Spedytorzy</value>
   </data>
   <data name="tabeleBox.Items3" xml:space="preserve">
-    <value>Pracownicy</value>
+    <value>Transakcje</value>
   </data>
   <data name="tabeleBox.Items4" xml:space="preserve">
     <value>Zamówienia</value>
@@ -325,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabeleBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -352,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>6</value>
   </data>
   <data name="edycja_rdk.Location" type="System.Drawing.Point, System.Drawing">
     <value>103, 176</value>
@@ -364,7 +283,7 @@
     <value>22</value>
   </data>
   <data name="edycja_rdk.Text" xml:space="preserve">
-    <value>Edytuj rekordy</value>
+    <value>Edytuj dane</value>
   </data>
   <data name="&gt;&gt;edycja_rdk.Name" xml:space="preserve">
     <value>edycja_rdk</value>
@@ -376,33 +295,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;edycja_rdk.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 234</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>tu wybierasz co cchesz eydtowac/pokazac</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
