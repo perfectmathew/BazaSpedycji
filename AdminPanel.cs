@@ -65,7 +65,7 @@ namespace Magazyn_Spedycji
                 case 3:
                     OleDbCommand createPracownicy = new OleDbCommand();
                     createPracownicy.Connection = con;
-                    string queryPracownicy = "Select * from Magazyn";
+                    string queryPracownicy = "Select * from ZamZaku";
                     createPracownicy.CommandText = queryPracownicy;
                     OleDbDataAdapter pracownicy = new OleDbDataAdapter(createPracownicy);
                     DataTable PracownicyTable = new DataTable();

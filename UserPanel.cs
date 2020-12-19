@@ -226,7 +226,7 @@ namespace Magazyn_Spedycji
             con.Open();
             OleDbCommand createZamowienia = new OleDbCommand();
             createZamowienia.Connection = con;
-            string queryZamowienia = "SELECT Zamowienia.IdZamowienia, Zamowienia.DataZamowienia, Spedytorzy.Firma, Zamowienia.NazwaWysylki, Zamowienia.TypPlatnosci, Zamowienia.DataZaplaty, Zamowienia.Uwagi FROM Spedytorzy INNER JOIN(StanZamowien INNER JOIN Zamowienia ON StanZamowien.IdStanu = Zamowienia.IdStanu) ON Spedytorzy.ID = Zamowienia.IdSpedytora WHERE Zamowienia.IdKlienta=" + UserValue + " AND Spedytorzy.ID NOT IN ( 4 )";
+            string queryZamowienia = "SELECT Zamowienia.IdZamowienia, StanZamowien.Nazwa AS StanZamowienia, Zamowienia.DataZamowienia, Spedytorzy.Firma, Zamowienia.NazwaWysylki, Zamowienia.TypPlatnosci, Zamowienia.DataZaplaty, Zamowienia.Uwagi FROM Spedytorzy INNER JOIN(StanZamowien INNER JOIN Zamowienia ON StanZamowien.IdStanu = Zamowienia.IdStanu) ON Spedytorzy.ID = Zamowienia.IdSpedytora WHERE Zamowienia.IdKlienta=" + UserValue + " AND Spedytorzy.ID NOT IN ( 4 )";
             createZamowienia.CommandText = queryZamowienia;
             OleDbDataAdapter zamowienia = new OleDbDataAdapter(createZamowienia);
             DataTable OrderTable = new DataTable();

@@ -114,7 +114,7 @@ namespace Magazyn_Spedycji
                 getDeliveryOption();
                 OleDbCommand updateOrder = new OleDbCommand();
                 updateOrder.Connection = con;
-                updateOrder.CommandText = "UPDATE Zamowienia SET Idklienta='"+UserValue+"', DataZamowienia='"+CurentDate+"', IdSpedytora='"+iddelivery+"', NazwaWysylki='"+DeliveryOption.Text+"', TypPlatnosci='"+PaymentsMethod.Text+"', DataZaplaty='"+CurentDate+"' WHERE IdZamowienia="+CurentOrder;
+                updateOrder.CommandText = "UPDATE Zamowienia SET Idklienta='"+UserValue+"', DataZamowienia='"+CurentDate+"', IdSpedytora='"+iddelivery+"', NazwaWysylki='"+DeliveryOption.Text+"', TypPlatnosci='"+PaymentsMethod.Text+"', DataZaplaty='"+CurentDate+"', Uwagi='"+Uwagi.Text+"' WHERE IdZamowienia="+CurentOrder;
                 updateOrder.ExecuteNonQuery();
                 OleDbCommand CreatenewOrder = new OleDbCommand();
                 CreatenewOrder.Connection = con;
