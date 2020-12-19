@@ -49,7 +49,7 @@ namespace Magazyn_Spedycji
                         MessageBox.Show("Pomyślnie zarejestrowano!");
                         this.Hide();
                     }
-                    else MessageBox.Show("Użytkowni o danym loginie już istnieje w naszej bazie danych!");
+                    else MessageBox.Show("Użytkownik o danym loginie już istnieje w naszej bazie danych!");
                     con.Close();
                 }
                 catch (Exception ex)

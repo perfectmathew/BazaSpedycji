@@ -58,6 +58,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ProdutsCode = new System.Windows.Forms.TextBox();
+            this.ToCart = new System.Windows.Forms.Button();
+            this.showcart = new System.Windows.Forms.Button();
+            this.Amount = new System.Windows.Forms.TextBox();
+            this.CreateOrder = new System.Windows.Forms.Button();
+            this.DeleteFromCart = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.showMore = new System.Windows.Forms.Button();
+            this.IDOrder = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -107,17 +120,16 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(225, 94);
+            this.dataGridView1.Location = new System.Drawing.Point(225, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(723, 389);
+            this.dataGridView1.Size = new System.Drawing.Size(723, 382);
             this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 116);
+            this.label1.Location = new System.Drawing.Point(7, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 11;
@@ -213,7 +225,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(53, 146);
             this.label2.Name = "label2";
@@ -224,7 +236,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(12, 173);
             this.label3.Name = "label3";
@@ -235,9 +247,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(43, 200);
+            this.label4.Location = new System.Drawing.Point(42, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 20);
             this.label4.TabIndex = 26;
@@ -246,7 +258,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.Location = new System.Drawing.Point(27, 227);
             this.label5.Name = "label5";
@@ -257,7 +269,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(40, 254);
             this.label6.Name = "label6";
@@ -268,7 +280,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.Location = new System.Drawing.Point(34, 284);
             this.label7.Name = "label7";
@@ -279,9 +291,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(8, 312);
+            this.label8.Location = new System.Drawing.Point(6, 312);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 20);
             this.label8.TabIndex = 30;
@@ -290,9 +302,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(8, 338);
+            this.label9.Location = new System.Drawing.Point(7, 338);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 20);
             this.label9.TabIndex = 31;
@@ -301,7 +313,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label10.Location = new System.Drawing.Point(56, 364);
             this.label10.Name = "label10";
@@ -312,9 +324,9 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(44, 390);
+            this.label11.Location = new System.Drawing.Point(43, 390);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 20);
             this.label11.TabIndex = 33;
@@ -323,7 +335,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.Location = new System.Drawing.Point(40, 416);
             this.label12.Name = "label12";
@@ -331,11 +343,138 @@
             this.label12.TabIndex = 34;
             this.label12.Text = "Hasło:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(483, 24);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(181, 20);
+            this.textBox1.TabIndex = 35;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(670, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(66, 26);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Wyszukaj";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ProdutsCode
+            // 
+            this.ProdutsCode.Location = new System.Drawing.Point(848, 9);
+            this.ProdutsCode.Name = "ProdutsCode";
+            this.ProdutsCode.Size = new System.Drawing.Size(100, 20);
+            this.ProdutsCode.TabIndex = 37;
+            // 
+            // ToCart
+            // 
+            this.ToCart.Location = new System.Drawing.Point(848, 53);
+            this.ToCart.Name = "ToCart";
+            this.ToCart.Size = new System.Drawing.Size(100, 23);
+            this.ToCart.TabIndex = 38;
+            this.ToCart.Text = "Dodaj do koszyka";
+            this.ToCart.UseVisualStyleBackColor = true;
+            this.ToCart.Click += new System.EventHandler(this.ToCart_Click);
+            // 
+            // showcart
+            // 
+            this.showcart.Location = new System.Drawing.Point(767, 52);
+            this.showcart.Name = "showcart";
+            this.showcart.Size = new System.Drawing.Size(75, 46);
+            this.showcart.TabIndex = 39;
+            this.showcart.Text = "Wyświetl koszyk";
+            this.showcart.UseVisualStyleBackColor = true;
+            this.showcart.Click += new System.EventHandler(this.showcart_Click);
+            // 
+            // Amount
+            // 
+            this.Amount.Location = new System.Drawing.Point(848, 33);
+            this.Amount.Name = "Amount";
+            this.Amount.Size = new System.Drawing.Size(100, 20);
+            this.Amount.TabIndex = 41;
+            // 
+            // CreateOrder
+            // 
+            this.CreateOrder.Location = new System.Drawing.Point(670, 53);
+            this.CreateOrder.Name = "CreateOrder";
+            this.CreateOrder.Size = new System.Drawing.Size(91, 45);
+            this.CreateOrder.TabIndex = 42;
+            this.CreateOrder.Text = "Złóż Zamówienie";
+            this.CreateOrder.UseVisualStyleBackColor = true;
+            this.CreateOrder.Click += new System.EventHandler(this.CreateOrder_Click);
+            // 
+            // DeleteFromCart
+            // 
+            this.DeleteFromCart.Location = new System.Drawing.Point(848, 75);
+            this.DeleteFromCart.Name = "DeleteFromCart";
+            this.DeleteFromCart.Size = new System.Drawing.Size(100, 23);
+            this.DeleteFromCart.TabIndex = 43;
+            this.DeleteFromCart.Text = "Usuń z koszyka";
+            this.DeleteFromCart.UseVisualStyleBackColor = true;
+            this.DeleteFromCart.Click += new System.EventHandler(this.DeleteFromCart_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(810, 33);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "Ilość:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(767, 12);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 13);
+            this.label14.TabIndex = 45;
+            this.label14.Text = "Kod Produktu:";
+            // 
+            // showMore
+            // 
+            this.showMore.Location = new System.Drawing.Point(589, 56);
+            this.showMore.Name = "showMore";
+            this.showMore.Size = new System.Drawing.Size(75, 38);
+            this.showMore.TabIndex = 46;
+            this.showMore.Text = "Wyświetl szczególy";
+            this.showMore.UseVisualStyleBackColor = true;
+            this.showMore.Click += new System.EventHandler(this.showMore_Click);
+            // 
+            // IDOrder
+            // 
+            this.IDOrder.Location = new System.Drawing.Point(483, 66);
+            this.IDOrder.Name = "IDOrder";
+            this.IDOrder.Size = new System.Drawing.Size(100, 20);
+            this.IDOrder.TabIndex = 47;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(483, 50);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 13);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "ID Zamówienia:";
+            // 
             // UserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 511);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.IDOrder);
+            this.Controls.Add(this.showMore);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.DeleteFromCart);
+            this.Controls.Add(this.CreateOrder);
+            this.Controls.Add(this.Amount);
+            this.Controls.Add(this.showcart);
+            this.Controls.Add(this.ToCart);
+            this.Controls.Add(this.ProdutsCode);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -409,5 +548,18 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox ProdutsCode;
+        private System.Windows.Forms.Button ToCart;
+        private System.Windows.Forms.Button showcart;
+        private System.Windows.Forms.TextBox Amount;
+        private System.Windows.Forms.Button CreateOrder;
+        private System.Windows.Forms.Button DeleteFromCart;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button showMore;
+        private System.Windows.Forms.TextBox IDOrder;
+        private System.Windows.Forms.Label label15;
     }
 }

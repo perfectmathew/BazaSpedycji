@@ -13,22 +13,72 @@ namespace Magazyn_Spedycji
     public partial class CarrierPanel : Form
     {
         string CarrierValue;
+        string imieSpedytora;
+        string nazwiskoSpedytora;
+        string EmailSpedytora;
+        string TelefonSpedytora;
+        string LoginSpedytora;
+        string HasloSpedytora;
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
         public CarrierPanel()
         {
             InitializeComponent();
         }
-         public void ab(string LoginValue)
+        private void odswiez()
+        {
+           
+            OleDbCommand createSpedytorzy = new OleDbCommand();
+            createSpedytorzy.Connection = con;
+            string querySpedytorzy = "SELECT Zamowienia.IdZamowienia, Zamowienia.NazwaWysylki, StanZamowien.Nazwa AS StanZamowienia, Zamowienia.DataZamowienia, Klienci.Imie, Klienci.Nazwisko, Klienci.Telefon, Klienci.Adres, Klienci.Miasto, Klienci.Wojewodztwo, Klienci.KodPocztowy, Klienci.Kraj FROM StanZamowien INNER JOIN(Spedytorzy INNER JOIN (Klienci INNER JOIN Zamowienia ON Klienci.ID = Zamowienia.IdKlienta) ON Spedytorzy.ID = Zamowienia.IdSpedytora) ON StanZamowien.IdStanu = Zamowienia.IdStanu WHERE Zamowienia.IdSpedytora=" + CarrierValue + "";
+            createSpedytorzy.CommandText = querySpedytorzy;
+            OleDbDataAdapter spedytorzy = new OleDbDataAdapter(createSpedytorzy);
+            DataTable SpedytorzyTable = new DataTable();
+            spedytorzy.Fill(SpedytorzyTable);
+            dataGridView1.DataSource = SpedytorzyTable;
+            
+        }
+        public void ab(string LoginValue)
         {
             CarrierValue = LoginValue.ToString();
         }
+        public void getData()
+        {
+            con.Open();
+            OleDbCommand getImie = new OleDbCommand();
+            getImie.Connection = con;
+            getImie.CommandText = "Select Imie FROM Spedytorzy WHERE ID="+CarrierValue;
+            imieSpedytora = (string)getImie.ExecuteScalar();
+            OleDbCommand getNazwisko = new OleDbCommand();
+            getNazwisko.Connection = con;
+            getNazwisko.CommandText = "Select Nazwisko FROM Spedytorzy WHERE ID=" + CarrierValue;
+            nazwiskoSpedytora = (string)getNazwisko.ExecuteScalar();
+            OleDbCommand getEmail = new OleDbCommand();
+            getEmail.Connection = con;
+            getEmail.CommandText = "Select Email FROM Spedytorzy WHERE ID=" + CarrierValue;
+            EmailSpedytora = (string)getEmail.ExecuteScalar();
+            OleDbCommand getTelefon = new OleDbCommand();
+            getTelefon.Connection = con;
+            getTelefon.CommandText = "Select Telefon FROM Spedytorzy WHERE ID=" + CarrierValue;
+            TelefonSpedytora = (string)getTelefon.ExecuteScalar();
+            OleDbCommand getLogin = new OleDbCommand();
+            getLogin.Connection = con;
+            getLogin.CommandText = "Select Login FROM Spedytorzy WHERE ID=" + CarrierValue;
+            LoginSpedytora = (string)getLogin.ExecuteScalar();
+            OleDbCommand getHaslo = new OleDbCommand();
+            getHaslo.Connection = con;
+            getHaslo.CommandText = "Select Haslo FROM Spedytorzy WHERE ID=" + CarrierValue;
+            HasloSpedytora = (string)getHaslo.ExecuteScalar();
+            con.Close();
+        }
         private void CarrierPanel_Load(object sender, EventArgs e)
         {
-            
+            IDspedy.Text = "Twoje unikalne ID: "+CarrierValue;
+            getData();
+         //   MessageBox.Show(imieSpedytora+nazwiskoSpedytora+EmailSpedytora+TelefonSpedytora+LoginSpedytora+HasloSpedytora);
             con.Open();
             OleDbCommand createSpedytorzy = new OleDbCommand();
             createSpedytorzy.Connection = con; 
-            string querySpedytorzy = "Select Zamowienia.NazwaWysylki, StanZamowien.Nazwa, Zamowienia.IdZamowienia, Zamowienia.IdKlienta,DataZamowienia, Zamowienia.DataWyslania, Zamowienia.Adres, Zamowienia.Miasto, Zamowienia.Wojewodztwo, Zamowienia.KodPocztowy, Zamowienia.Kraj, Zamowienia.OplatazaWysylke, Zamowienia.TypPlatnosci, Zamowienia.DataZaplaty, Zamowienia.Uwagi from Zamowienia INNER JOIN StanZamowien ON Zamowienia.IdStanu=StanZamowien.IdStanu where IdSpedytora=" + CarrierValue+"";
+            string querySpedytorzy = "SELECT Zamowienia.IdZamowienia, Zamowienia.NazwaWysylki, StanZamowien.Nazwa AS StanZamowienia, Zamowienia.DataZamowienia, Klienci.Imie, Klienci.Nazwisko, Klienci.Telefon, Klienci.Adres, Klienci.Miasto, Klienci.Wojewodztwo, Klienci.KodPocztowy, Klienci.Kraj FROM StanZamowien INNER JOIN(Spedytorzy INNER JOIN (Klienci INNER JOIN Zamowienia ON Klienci.ID = Zamowienia.IdKlienta) ON Spedytorzy.ID = Zamowienia.IdSpedytora) ON StanZamowien.IdStanu = Zamowienia.IdStanu WHERE Zamowienia.IdSpedytora="+CarrierValue+"";
             createSpedytorzy.CommandText = querySpedytorzy;
             OleDbDataAdapter spedytorzy = new OleDbDataAdapter(createSpedytorzy);
             DataTable SpedytorzyTable = new DataTable();
@@ -42,7 +92,7 @@ namespace Magazyn_Spedycji
         {
             if (StatusOrderCombo.SelectedIndex == -1)
             {
-                MessageBox.Show("Wybierz poziom uprawnień!");
+                MessageBox.Show("Wybierz Status zamówienia!");
             }
             if (StatusOrderCombo.SelectedIndex == 0)
             {
@@ -72,25 +122,20 @@ namespace Magazyn_Spedycji
                     {
                         command.ExecuteNonQuery();
                         MessageBox.Show("Stan zamówienia zaktualizowany!");
-                     
-                        OleDbCommand createSpedytorzy = new OleDbCommand();
-                        createSpedytorzy.Connection = con;
-                        string querySpedytorzy = "Select Zamowienia.NazwaWysylki, StanZamowien.Nazwa, Zamowienia.IdZamowienia, Zamowienia.IdKlienta,DataZamowienia, Zamowienia.DataWyslania, Zamowienia.Adres, Zamowienia.Miasto, Zamowienia.Wojewodztwo, Zamowienia.KodPocztowy, Zamowienia.Kraj, Zamowienia.OplatazaWysylke, Zamowienia.TypPlatnosci, Zamowienia.DataZaplaty, Zamowienia.Uwagi from Zamowienia INNER JOIN StanZamowien ON Zamowienia.IdStanu=StanZamowien.IdStanu where IdSpedytora=" + CarrierValue + "";
-                        createSpedytorzy.CommandText = querySpedytorzy;
-                        OleDbDataAdapter spedytorzy = new OleDbDataAdapter(createSpedytorzy);
-                        DataTable SpedytorzyTable = new DataTable();
-                        spedytorzy.Fill(SpedytorzyTable);
-                        dataGridView1.DataSource = SpedytorzyTable;
+
+                        odswiez();
                   
                     }
 
-
+                
+              
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Napotkany problem: " + ex);
                 }
-                con.Close();
+            con.Close();
+
             }
             if (StatusOrderCombo.SelectedIndex == 1)
             {
@@ -121,27 +166,22 @@ namespace Magazyn_Spedycji
                         command.ExecuteNonQuery();
                         MessageBox.Show("Stan zamówienia zaktualizowany!");
 
-                        OleDbCommand createSpedytorzy = new OleDbCommand();
-                        createSpedytorzy.Connection = con;
-                        string querySpedytorzy = "Select Zamowienia.NazwaWysylki, StanZamowien.Nazwa, Zamowienia.IdZamowienia, Zamowienia.IdKlienta,DataZamowienia, Zamowienia.DataWyslania, Zamowienia.Adres, Zamowienia.Miasto, Zamowienia.Wojewodztwo, Zamowienia.KodPocztowy, Zamowienia.Kraj, Zamowienia.OplatazaWysylke, Zamowienia.TypPlatnosci, Zamowienia.DataZaplaty, Zamowienia.Uwagi from Zamowienia INNER JOIN StanZamowien ON Zamowienia.IdStanu=StanZamowien.IdStanu where IdSpedytora=" + CarrierValue + "";
-                        createSpedytorzy.CommandText = querySpedytorzy;
-                        OleDbDataAdapter spedytorzy = new OleDbDataAdapter(createSpedytorzy);
-                        DataTable SpedytorzyTable = new DataTable();
-                        spedytorzy.Fill(SpedytorzyTable);
-                        dataGridView1.DataSource = SpedytorzyTable;
+                        odswiez();
 
                     }
 
-
+                   
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Napotkany problem: " + ex);
                 }
-                con.Close();
+            con.Close();
+
             }
 
-
         }
+
+
     }
 }

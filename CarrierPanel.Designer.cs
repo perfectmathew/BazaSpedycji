@@ -40,6 +40,8 @@
             this.IDZamField = new System.Windows.Forms.TextBox();
             this.UpdateOrderButton = new System.Windows.Forms.Button();
             this.StatusOrderCombo = new System.Windows.Forms.ComboBox();
+            this.IDspedy = new System.Windows.Forms.Label();
+            this.changedataswitch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource)).BeginInit();
@@ -84,7 +86,7 @@
             // IDZamText
             // 
             this.IDZamText.AutoSize = true;
-            this.IDZamText.Location = new System.Drawing.Point(38, 186);
+            this.IDZamText.Location = new System.Drawing.Point(13, 172);
             this.IDZamText.Name = "IDZamText";
             this.IDZamText.Size = new System.Drawing.Size(78, 13);
             this.IDZamText.TabIndex = 8;
@@ -93,7 +95,7 @@
             // StanZamText
             // 
             this.StanZamText.AutoSize = true;
-            this.StanZamText.Location = new System.Drawing.Point(38, 226);
+            this.StanZamText.Location = new System.Drawing.Point(13, 212);
             this.StanZamText.Name = "StanZamText";
             this.StanZamText.Size = new System.Drawing.Size(89, 13);
             this.StanZamText.TabIndex = 9;
@@ -101,14 +103,14 @@
             // 
             // IDZamField
             // 
-            this.IDZamField.Location = new System.Drawing.Point(41, 203);
+            this.IDZamField.Location = new System.Drawing.Point(16, 189);
             this.IDZamField.Name = "IDZamField";
             this.IDZamField.Size = new System.Drawing.Size(100, 20);
             this.IDZamField.TabIndex = 10;
             // 
             // UpdateOrderButton
             // 
-            this.UpdateOrderButton.Location = new System.Drawing.Point(41, 269);
+            this.UpdateOrderButton.Location = new System.Drawing.Point(16, 255);
             this.UpdateOrderButton.Name = "UpdateOrderButton";
             this.UpdateOrderButton.Size = new System.Drawing.Size(100, 23);
             this.UpdateOrderButton.TabIndex = 12;
@@ -122,16 +124,36 @@
             this.StatusOrderCombo.Items.AddRange(new object[] {
             "W drodze",
             "Zamknięte"});
-            this.StatusOrderCombo.Location = new System.Drawing.Point(41, 242);
+            this.StatusOrderCombo.Location = new System.Drawing.Point(16, 228);
             this.StatusOrderCombo.Name = "StatusOrderCombo";
             this.StatusOrderCombo.Size = new System.Drawing.Size(100, 21);
             this.StatusOrderCombo.TabIndex = 13;
+            // 
+            // IDspedy
+            // 
+            this.IDspedy.AutoSize = true;
+            this.IDspedy.Location = new System.Drawing.Point(13, 143);
+            this.IDspedy.Name = "IDspedy";
+            this.IDspedy.Size = new System.Drawing.Size(35, 13);
+            this.IDspedy.TabIndex = 14;
+            this.IDspedy.Text = "label1";
+            // 
+            // changedataswitch
+            // 
+            this.changedataswitch.Location = new System.Drawing.Point(129, 466);
+            this.changedataswitch.Name = "changedataswitch";
+            this.changedataswitch.Size = new System.Drawing.Size(112, 33);
+            this.changedataswitch.TabIndex = 15;
+            this.changedataswitch.Text = "Zmień Swoje Dane";
+            this.changedataswitch.UseVisualStyleBackColor = true;
             // 
             // CarrierPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 511);
+            this.Controls.Add(this.changedataswitch);
+            this.Controls.Add(this.IDspedy);
             this.Controls.Add(this.StatusOrderCombo);
             this.Controls.Add(this.UpdateOrderButton);
             this.Controls.Add(this.IDZamField);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.TextBox IDZamField;
         private System.Windows.Forms.Button UpdateOrderButton;
         private System.Windows.Forms.ComboBox StatusOrderCombo;
+        private System.Windows.Forms.Label IDspedy;
+        private System.Windows.Forms.Button changedataswitch;
     }
 }

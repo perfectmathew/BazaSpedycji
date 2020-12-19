@@ -15,13 +15,25 @@ namespace Magazyn_Spedycji
     public partial class UserPanel : Form
     {
         bool poprawne = false;
-        int kolumna = 0;
         string UserValue;
+        string imieKlienta;
+        string nazwiskoKlienta;
+        string EmailKlienta;
+        string telefonKlienta;
+        string adresKlienta;
+        string miastoKlienta;
+        string wojewodztwoKlienta;
+        string kodpocztowyKlienta;
+        string krajKlienta;
+        string loginKlienta;
+        string hasloKlienta;
+        private PaySystem paySystem;
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
         public UserPanel()
         {
             InitializeComponent();
         }
+
         public void UserCondiction(string LoginValue)
         {
             UserValue = LoginValue;
@@ -51,7 +63,11 @@ namespace Magazyn_Spedycji
             label10.Hide();
             label11.Hide();
             label12.Hide();
-
+            Amount.Hide();
+            ProdutsCode.Hide();
+            ToCart.Hide();
+            showcart.Hide();
+          
         }
         private void pokazelementyui()
         {
@@ -78,7 +94,81 @@ namespace Magazyn_Spedycji
             label10.Show();
             label11.Show();
             label12.Show();
+         
 
+        }
+        private void getUserData()
+        {
+            con.Open();
+            OleDbCommand getImie = new OleDbCommand();
+            getImie.Connection = con;
+            getImie.CommandText = "Select Imie FROM Klienci WHERE ID=" + UserValue;
+            imieKlienta = (string)getImie.ExecuteScalar();
+            OleDbCommand getNazwisko = new OleDbCommand();
+            getNazwisko.Connection = con;
+            getNazwisko.CommandText = "Select Nazwisko FROM Klienci WHERE ID=" + UserValue;
+            nazwiskoKlienta = (string)getNazwisko.ExecuteScalar();
+            OleDbCommand getEmail = new OleDbCommand();
+            getEmail.Connection = con;
+            getEmail.CommandText = "Select Email FROM Klienci WHERE ID=" + UserValue;
+            EmailKlienta = (string)getEmail.ExecuteScalar();
+            OleDbCommand getTelefon = new OleDbCommand();
+            getTelefon.Connection = con;
+            getTelefon.CommandText = "Select Telefon FROM Klienci WHERE ID=" + UserValue;
+            telefonKlienta = (string)getTelefon.ExecuteScalar();
+            OleDbCommand getAdres = new OleDbCommand();
+            getAdres.Connection = con;
+            getAdres.CommandText = "Select Adres FROM Klienci WHERE ID=" + UserValue;
+            adresKlienta = (string)getAdres.ExecuteScalar();
+            OleDbCommand getMiasto = new OleDbCommand();
+            getMiasto.Connection = con;
+            getMiasto.CommandText = "Select Miasto FROM Klienci WHERE ID=" + UserValue;
+            miastoKlienta = (string)getMiasto.ExecuteScalar();
+            OleDbCommand getWoj = new OleDbCommand();
+            getWoj.Connection = con;
+            getWoj.CommandText = "Select Wojewodztwo FROM Klienci WHERE ID=" + UserValue;
+            wojewodztwoKlienta = (string)getWoj.ExecuteScalar();
+            OleDbCommand getPostal = new OleDbCommand();
+            getPostal.Connection = con;
+            getPostal.CommandText = "Select KodPocztowy FROM Klienci WHERE ID=" + UserValue;
+            kodpocztowyKlienta = (string)getPostal.ExecuteScalar();
+            OleDbCommand getKraj = new OleDbCommand();
+            getKraj.Connection = con;
+            getKraj.CommandText = "Select Kraj FROM Klienci WHERE ID=" + UserValue;
+            krajKlienta = (string)getKraj.ExecuteScalar();
+            OleDbCommand getLogin = new OleDbCommand();
+            getLogin.Connection = con;
+            getLogin.CommandText = "Select Login FROM Klienci WHERE ID=" + UserValue;
+            loginKlienta = (string)getLogin.ExecuteScalar();
+            OleDbCommand getHaslo = new OleDbCommand();
+            getHaslo.Connection = con;
+            getHaslo.CommandText = "Select Haslo FROM Klienci WHERE ID=" + UserValue;
+            hasloKlienta = (string)getHaslo.ExecuteScalar();
+            con.Close();
+            ImieBox.Text = imieKlienta;
+            NazwiskoBox.Text = nazwiskoKlienta;
+            EmailBox.Text = EmailKlienta;
+            TelefonBox.Text = telefonKlienta;
+            AdresBox.Text = adresKlienta;
+            MiastoBox.Text = miastoKlienta;
+            WojewodztwoBox.Text = wojewodztwoKlienta;
+            KodBox.Text = kodpocztowyKlienta;
+            KrajBox.Text = krajKlienta;
+            LoginBox.Text = loginKlienta;
+            hasloBox.Text = hasloKlienta;
+        }
+        private void otworzsklep()
+        {
+            con.Open();
+            OleDbCommand createSklep = new OleDbCommand();
+            createSklep.Connection = con;
+            string querySklep = "SELECT KodProduktu,NazwaProduktu,Opis,CenaJednostkowa,Ilosc FROM Produkty WHERE ID NOT IN ( 8 ) ORDER BY ID ASC";
+            createSklep.CommandText = querySklep;
+            OleDbDataAdapter sklep = new OleDbDataAdapter(createSklep);
+            DataTable Sklep = new DataTable();
+            sklep.Fill(Sklep);
+            dataGridView1.DataSource = Sklep;
+            con.Close();
         }
         private void checkdata()
         {
@@ -102,7 +192,7 @@ namespace Magazyn_Spedycji
         {
             OleDbCommand createUserData = new OleDbCommand();
             createUserData.Connection = con;
-            string queryData = "SELECT * FROM Klienci WHERE ID=" + UserValue + "";
+            string queryData = "SELECT Imie,Nazwisko,Email,Telefon,Adres,Miasto,Wojewodztwo,KodPocztowy,Kraj,Login,Haslo FROM Klienci WHERE ID=" + UserValue + "";
             createUserData.CommandText = queryData;
             OleDbDataAdapter UserData = new OleDbDataAdapter(createUserData);
             DataTable UserDatabase = new DataTable();
@@ -110,35 +200,33 @@ namespace Magazyn_Spedycji
             dataGridView1.DataSource = UserDatabase;
             con.Close();
         }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            kolumna = e.RowIndex;
-            DataGridViewRow kol = dataGridView1.Rows[kolumna];
-            ImieBox.Text = kol.Cells[1].Value.ToString();
-            NazwiskoBox.Text = kol.Cells[2].Value.ToString();
-            EmailBox.Text = kol.Cells[3].Value.ToString();
-            TelefonBox.Text = kol.Cells[4].Value.ToString();
-            AdresBox.Text = kol.Cells[5].Value.ToString();
-           MiastoBox.Text = kol.Cells[6].Value.ToString();
-            WojewodztwoBox.Text = kol.Cells[7].Value.ToString();
-            KodBox.Text = kol.Cells[8].Value.ToString();
-            KrajBox.Text = kol.Cells[9].Value.ToString();
-            LoginBox.Text = kol.Cells[10].Value.ToString();
-           hasloBox.Text = kol.Cells[11].Value.ToString();
-        }
         private void UserPanel_Load(object sender, EventArgs e)
         {
+            showMore.Hide();
+            IDOrder.Hide();
+            label15.Hide();
+            label13.Hide();
+            label14.Hide();
             schowajelementyui();
+            CreateOrder.Hide();
+            DeleteFromCart.Hide();
             label1.Text = "ID KLIENTA: " + UserValue ;
+            
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
+            showMore.Show();
+            IDOrder.Show();
+            label15.Show();
+            label13.Hide();
+            DeleteFromCart.Hide();
+            label14.Hide();
+            CreateOrder.Hide();
             schowajelementyui();
             con.Open();
             OleDbCommand createZamowienia = new OleDbCommand();
             createZamowienia.Connection = con;
-            string queryZamowienia = "SELECT Zamowienia.IdZamowienia , DataZamowienia, StanZamowien.Nazwa as [Stan Zamowienia], Zamowienia.DataWyslania, Zamowienia.Adres, Zamowienia.Miasto, Zamowienia.Wojewodztwo, Zamowienia.KodPocztowy, Zamowienia.Kraj, Zamowienia.OplatazaWysylke, Zamowienia.TypPlatnosci, Zamowienia.DataZaplaty, Zamowienia.Uwagi FROM [Zamowienia] INNER JOIN StanZamowien ON Zamowienia.IdStanu=StanZamowien.IdStanu where IdKlienta=" + UserValue + "";
+            string queryZamowienia = "SELECT Zamowienia.IdZamowienia, Zamowienia.DataZamowienia, Spedytorzy.Firma, Zamowienia.NazwaWysylki, Zamowienia.TypPlatnosci, Zamowienia.DataZaplaty, Zamowienia.Uwagi FROM Spedytorzy INNER JOIN(StanZamowien INNER JOIN Zamowienia ON StanZamowien.IdStanu = Zamowienia.IdStanu) ON Spedytorzy.ID = Zamowienia.IdSpedytora WHERE Zamowienia.IdKlienta=" + UserValue + " AND Spedytorzy.ID NOT IN ( 4 )";
             createZamowienia.CommandText = queryZamowienia;
             OleDbDataAdapter zamowienia = new OleDbDataAdapter(createZamowienia);
             DataTable OrderTable = new DataTable();
@@ -146,37 +234,35 @@ namespace Magazyn_Spedycji
             dataGridView1.DataSource = OrderTable;
             con.Close();
         }
-
         private void MyDataOpen_Click(object sender, EventArgs e)
         {
+            showMore.Hide();
+            IDOrder.Hide();
+            label15.Hide();
+            label13.Hide();
+            label14.Hide();
+            CreateOrder.Hide();
+            DeleteFromCart.Hide();
+            otworzsklep();
+            getUserData();
             pokazelementyui();
-            con.Open();
-            OleDbCommand createUserData = new OleDbCommand();
-            createUserData.Connection = con;
-            string queryData = "SELECT * FROM Klienci WHERE ID="+UserValue+"";
-            createUserData.CommandText = queryData;
-            OleDbDataAdapter UserData = new OleDbDataAdapter(createUserData);
-            DataTable UserDatabase = new DataTable();
-            UserData.Fill(UserDatabase);
-            dataGridView1.DataSource = UserDatabase;
-            con.Close();
         }
-
         private void ShopOpen_Click(object sender, EventArgs e)
         {
             schowajelementyui();
-            con.Open();
-            OleDbCommand createSklep = new OleDbCommand();
-            createSklep.Connection = con;
-            string querySklep = "SELECT * FROM Produkty ORDER BY ID ASC";
-            createSklep.CommandText = querySklep;
-            OleDbDataAdapter sklep = new OleDbDataAdapter(createSklep);
-            DataTable Sklep = new DataTable();
-            sklep.Fill(Sklep);
-            dataGridView1.DataSource = Sklep;
-            con.Close();
+            showMore.Hide();
+            IDOrder.Hide();
+            label15.Hide();
+            label13.Show();
+            label14.Show();
+            CreateOrder.Hide();
+            DeleteFromCart.Hide();
+            Amount.Show();
+            ProdutsCode.Show();
+            ToCart.Show();
+            showcart.Show();
+            otworzsklep();
         }
-
         private void UpdateUserButton_Click(object sender, EventArgs e)
         {
             checkdata();
@@ -185,8 +271,6 @@ namespace Magazyn_Spedycji
                 con.Open();
                 OleDbCommand laczenie = new OleDbCommand();
                 laczenie.Connection = con;
-        
-
                 string queryEdycja = "update Klienci set Imie='" + ImieBox.Text + "', Nazwisko='" + NazwiskoBox.Text + "', Telefon='" + TelefonBox.Text + "', Adres='" + AdresBox.Text + "', Miasto='" + MiastoBox.Text + "', Wojewodztwo='"+WojewodztwoBox.Text+"', KodPocztowy='"+KodBox.Text+"', Kraj='"+KrajBox.Text+"', Login='"+LoginBox.Text+"', Haslo='"+hasloBox.Text+ "' where ID=" + UserValue;
                 laczenie.CommandText = queryEdycja;
                 laczenie.ExecuteNonQuery();
@@ -194,6 +278,156 @@ namespace Magazyn_Spedycji
                 con.Close();
             }
             odswiez();
+        }
+        private void ToCart_Click(object sender, EventArgs e)
+        {
+            int wIlosc = 0;
+            bool isNumber = false;
+            isNumber = int.TryParse(Amount.Text, out wIlosc);
+            if (ProdutsCode.Text == "" || Amount.Text=="" || !isNumber) MessageBox.Show("Wpisz Kod porduktu który chcesz dodać do koszyka, oraz jego ilość!");
+            else
+            {
+                con.Open();
+                OleDbCommand search = new OleDbCommand();
+                search.Connection = con;
+                search.CommandText = "Select * FROM Produkty WHERE KodProduktu='"+ProdutsCode.Text+"' AND Ilosc>="+Convert.ToInt32(Amount.Text);
+                int count = 0;
+                OleDbDataReader reader = search.ExecuteReader();
+                while (reader.Read())
+                {
+                    count = count + 1;
+                }
+                if (count == 1) 
+                {
+                    DialogResult cartconfirm = MessageBox.Show("Czy chcesz dodać ten produkt do koszyka?","Uwaga!",MessageBoxButtons.YesNo);
+                    if(cartconfirm==DialogResult.Yes)
+                    {
+                        OleDbCommand getOrderNumber = new OleDbCommand();
+                        getOrderNumber.Connection = con;
+                        getOrderNumber.CommandText = "SELECT TOP 1 SzczegolyZamowienia.IdZamowienia  FROM SzczegolyZamowienia ORDER BY SzczegolyZamowienia.IdZamowienia DESC";
+                        Int32 CurentOrder = (Int32)getOrderNumber.ExecuteScalar();
+                        OleDbCommand gedCode = new OleDbCommand();
+                        gedCode.Connection = con;
+                        //SELECT TOP 1 SzczegolyZamowienia.IdZamowienia  FROM SzczegolyZamowienia ORDER BY SzczegolyZamowienia.IdZamowienia DESC;
+                        gedCode.CommandText = "Select ID FROM Produkty WHERE KodProduktu='" + ProdutsCode.Text + "'";
+                        Int32 IIDProduktu = (Int32)gedCode.ExecuteScalar();
+                      OleDbCommand cmd = new OleDbCommand();
+                        cmd.Connection = con;
+                        cmd.CommandText = "INSERT INTO SzczegolyZamowienia(IdZamowienia,IdProduktu,Ilosc,IdStanu,IDKlienta) values('" + CurentOrder + "','" + IIDProduktu + "','" + Amount.Text + "','" + 0 + "','"+UserValue+"') ";
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Poprawnie dodadno produkt do koszyka!");
+                    }
+                    else if(cartconfirm==DialogResult.No)
+                    {
+                    }
+                }
+                else MessageBox.Show("Brak produktu o podanym Kodzie, lub brak wystarczającej ilości produktu na magazynie!");
+                con.Close();
+            }
+        }
+        private void showcart_Click(object sender, EventArgs e)
+        {
+            CreateOrder.Show();
+            DeleteFromCart.Show();
+            con.Open();
+            OleDbCommand getOrderNumber = new OleDbCommand();
+            getOrderNumber.Connection = con;
+            getOrderNumber.CommandText = "SELECT TOP 1 SzczegolyZamowienia.IdZamowienia  FROM SzczegolyZamowienia ORDER BY SzczegolyZamowienia.IdZamowienia DESC";
+            Int32 CurentOrder = (Int32)getOrderNumber.ExecuteScalar();
+            OleDbCommand createKoszyk = new OleDbCommand();
+            createKoszyk.Connection = con;
+            string queryKoszyk= "SELECT Produkty.NazwaProduktu, SzczegolyZamowienia.Ilosc, Produkty.CenaJednostkowa, Produkty.CenaJednostkowa*SzczegolyZamowienia.Ilosc AS CenaOgolna FROM Produkty INNER JOIN(Klienci INNER JOIN SzczegolyZamowienia ON Klienci.ID = SzczegolyZamowienia.IDKlienta) ON Produkty.ID = SzczegolyZamowienia.IdProduktu WHERE SzczegolyZamowienia.IdZamowienia = "+Convert.ToInt32( CurentOrder)+" AND Klienci.ID="+UserValue+" AND IdProduktu NOT IN ( 8 )";
+            createKoszyk.CommandText = queryKoszyk;
+            OleDbDataAdapter koszyk = new OleDbDataAdapter(createKoszyk);
+            DataTable Koszyk = new DataTable();
+            koszyk.Fill(Koszyk);
+            dataGridView1.DataSource = Koszyk;
+            con.Close();
+   
+        }
+        private void CreateOrder_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand getOrderNumber = new OleDbCommand();
+            getOrderNumber.Connection = con;
+            getOrderNumber.CommandText = "SELECT TOP 1 SzczegolyZamowienia.IdZamowienia  FROM SzczegolyZamowienia ORDER BY SzczegolyZamowienia.IdZamowienia DESC";
+            Int32 CurentOrder = (Int32)getOrderNumber.ExecuteScalar();
+            OleDbCommand checkifCartisEmpty = new OleDbCommand();
+            checkifCartisEmpty.Connection = con;
+            string queryKoszyk = "SELECT Produkty.NazwaProduktu, SzczegolyZamowienia.Ilosc, Produkty.CenaJednostkowa, Produkty.CenaJednostkowa*SzczegolyZamowienia.Ilosc AS CenaOgolna FROM Produkty INNER JOIN(Klienci INNER JOIN SzczegolyZamowienia ON Klienci.ID = SzczegolyZamowienia.IDKlienta) ON Produkty.ID = SzczegolyZamowienia.IdProduktu WHERE SzczegolyZamowienia.IdZamowienia = " + Convert.ToInt32(CurentOrder) + " AND Klienci.ID=" + UserValue + " AND IdProduktu NOT IN ( 8 )";
+            checkifCartisEmpty.CommandText = queryKoszyk;
+            int count = 0;
+            OleDbDataReader reader = checkifCartisEmpty.ExecuteReader();
+            while (reader.Read())
+            {
+                count = count + 1;
+            }
+            if (count == 0) MessageBox.Show("Koszyk jest pusty!");
+            else {
+                DeleteFromCart.Hide();
+                DialogResult payconfirm = MessageBox.Show("Czy napewno chcesz zakupić przedmioty znajdujące się w koszyku?", "Potwierdzenie złożenia zamówienia", MessageBoxButtons.YesNo);
+                if (payconfirm == DialogResult.Yes)
+                {
+                    int usccon = Convert.ToInt32(UserValue);
+                    this.Hide();
+                    PaySystem pay = new PaySystem();
+                    pay.UserCondiction(usccon.ToString());
+                    pay.ShowDialog();
+                    pay = null;
+                    this.Show();
+                }
+                else if (payconfirm == DialogResult.No)
+                {
+                }
+            }
+            con.Close();   
+        }
+        private void  DeleteFromCart_Click(object sender, EventArgs e)
+        {
+            if (ProdutsCode.Text == "") MessageBox.Show("Wskaż produkt który chcesz usunąc!");
+            else
+            {
+                con.Open();
+                OleDbCommand getProductID = new OleDbCommand();
+                getProductID.Connection = con;
+                getProductID.CommandText = "SELECT ID FROM Produkty WHERE KodProduktu='"+ProdutsCode.Text+"'";
+                Int32 IDProduktu = (Int32)getProductID.ExecuteScalar();
+                OleDbCommand DeleteFromCart = new OleDbCommand();
+                DeleteFromCart.Connection = con;
+                DeleteFromCart.CommandText = "DELETE FROM SzczegolyZamowien WHERE IdProduktu='"+IDProduktu+"', AND IdKlienta='"+UserValue+"'";
+
+                con.Close();
+            }
+        }
+        private void showMore_Click(object sender, EventArgs e)
+        {
+            if (IDOrder.Text == "") MessageBox.Show("Wpisz ID Zamówienia!");
+            else
+            {
+                con.Open();
+                OleDbCommand checker = new OleDbCommand();
+                checker.Connection = con;
+                checker.CommandText = "SELECT IdZamowienia FROM Zamowienia WHERE IdKlienta=" + UserValue + " AND IdZamowienia=" + IDOrder.Text + "";
+                OleDbDataReader reader = checker.ExecuteReader();
+                int count = 0;
+                while (reader.Read())
+                {
+                    count = count + 1;
+                }
+                if (count == 0) MessageBox.Show("To zamówienie nie istnieje, lub jest przypisane dla innego użytkownika!");
+                else
+                {
+                    OleDbCommand createKoszyk = new OleDbCommand();
+                    createKoszyk.Connection = con;
+                    string queryKoszyk = "SELECT Produkty.NazwaProduktu, SzczegolyZamowienia.Ilosc, Produkty.CenaJednostkowa, Produkty.CenaJednostkowa*SzczegolyZamowienia.Ilosc AS CenaOgolna FROM Produkty INNER JOIN(Klienci INNER JOIN SzczegolyZamowienia ON Klienci.ID = SzczegolyZamowienia.IDKlienta) ON Produkty.ID = SzczegolyZamowienia.IdProduktu WHERE SzczegolyZamowienia.IdZamowienia = " + IDOrder.Text + " AND Klienci.ID=" + UserValue + " AND IdProduktu NOT IN ( 8 )";
+                    createKoszyk.CommandText = queryKoszyk;
+                    OleDbDataAdapter koszyk = new OleDbDataAdapter(createKoszyk);
+                    DataTable Koszyk = new DataTable();
+                    koszyk.Fill(Koszyk);
+                    dataGridView1.DataSource = Koszyk;
+                }
+                con.Close();
+            }
         }
     }
 }

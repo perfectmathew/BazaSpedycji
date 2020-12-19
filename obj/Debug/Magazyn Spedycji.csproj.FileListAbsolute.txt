@@ -73,3 +73,4 @@ G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.csproj.GenerateResour
 G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.csproj.CoreCompileInputs.cache
 G:\BazaSpedycji-main_03.12.2020\obj\Debug\pl\Magazyn Spedycji.resources.dll
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.ProduktEdycja.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.PaySystem.resources

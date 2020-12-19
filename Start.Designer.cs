@@ -47,7 +47,7 @@
             // 
             // register_password
             // 
-            this.register_password.Location = new System.Drawing.Point(822, 422);
+            this.register_password.Location = new System.Drawing.Point(427, 412);
             this.register_password.Name = "register_password";
             this.register_password.Size = new System.Drawing.Size(123, 20);
             this.register_password.TabIndex = 0;
@@ -56,7 +56,7 @@
             // login_register
             // 
             this.login_register.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.login_register.Location = new System.Drawing.Point(822, 386);
+            this.login_register.Location = new System.Drawing.Point(427, 376);
             this.login_register.Name = "login_register";
             this.login_register.Size = new System.Drawing.Size(123, 20);
             this.login_register.TabIndex = 2;
@@ -68,7 +68,7 @@
             "Pracownik",
             "Klient",
             "Spedytor"});
-            this.UserAccessL.Location = new System.Drawing.Point(822, 457);
+            this.UserAccessL.Location = new System.Drawing.Point(427, 447);
             this.UserAccessL.Name = "UserAccessL";
             this.UserAccessL.Size = new System.Drawing.Size(123, 21);
             this.UserAccessL.TabIndex = 3;
@@ -78,7 +78,7 @@
             this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoginButton.Location = new System.Drawing.Point(822, 484);
+            this.LoginButton.Location = new System.Drawing.Point(427, 474);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(123, 23);
             this.LoginButton.TabIndex = 4;
@@ -89,7 +89,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Magazyn_Spedycji.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(237, 88);
+            this.pictureBox1.Location = new System.Drawing.Point(233, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(495, 283);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -100,30 +100,30 @@
             // 
             this.loginString.AutoSize = true;
             this.loginString.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.loginString.Location = new System.Drawing.Point(848, 346);
+            this.loginString.Location = new System.Drawing.Point(423, 335);
             this.loginString.Name = "loginString";
-            this.loginString.Size = new System.Drawing.Size(70, 25);
+            this.loginString.Size = new System.Drawing.Size(128, 25);
             this.loginString.TabIndex = 6;
-            this.loginString.Text = "Login";
+            this.loginString.Text = "Logowanie";
             this.loginString.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // SingInSwitch
             // 
-            this.SingInSwitch.Location = new System.Drawing.Point(417, 377);
+            this.SingInSwitch.Location = new System.Drawing.Point(409, 301);
             this.SingInSwitch.Name = "SingInSwitch";
             this.SingInSwitch.Size = new System.Drawing.Size(75, 23);
             this.SingInSwitch.TabIndex = 7;
-            this.SingInSwitch.Text = "Sing in";
+            this.SingInSwitch.Text = "Zaloguj";
             this.SingInSwitch.UseVisualStyleBackColor = true;
             this.SingInSwitch.Click += new System.EventHandler(this.SingInSwitch_Click);
             // 
             // SingUpSwitch
             // 
-            this.SingUpSwitch.Location = new System.Drawing.Point(498, 377);
+            this.SingUpSwitch.Location = new System.Drawing.Point(490, 301);
             this.SingUpSwitch.Name = "SingUpSwitch";
             this.SingUpSwitch.Size = new System.Drawing.Size(75, 23);
             this.SingUpSwitch.TabIndex = 8;
-            this.SingUpSwitch.Text = "Sing Up";
+            this.SingUpSwitch.Text = "Zarejestruj";
             this.SingUpSwitch.UseVisualStyleBackColor = true;
             this.SingUpSwitch.Click += new System.EventHandler(this.SingUpSwitch_Click);
             // 
@@ -140,7 +140,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(819, 370);
+            this.label1.Location = new System.Drawing.Point(424, 360);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 10;
@@ -149,7 +149,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(820, 407);
+            this.label2.Location = new System.Drawing.Point(425, 397);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 11;
@@ -158,16 +158,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(820, 442);
+            this.label3.Location = new System.Drawing.Point(425, 432);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(136, 13);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Jesteś:";
+            this.label3.Text = "Wybierz poziom uprawnień:";
             // 
             // PasswordReval
             // 
             this.PasswordReval.AutoSize = true;
-            this.PasswordReval.Location = new System.Drawing.Point(951, 425);
+            this.PasswordReval.Location = new System.Drawing.Point(556, 415);
             this.PasswordReval.Name = "PasswordReval";
             this.PasswordReval.Size = new System.Drawing.Size(15, 14);
             this.PasswordReval.TabIndex = 13;

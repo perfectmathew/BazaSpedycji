@@ -154,7 +154,6 @@
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 14;
             this.label7.Text = "Ilość";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -171,7 +170,7 @@
             this.edycja_rekordu.Name = "edycja_rekordu";
             this.edycja_rekordu.Size = new System.Drawing.Size(112, 53);
             this.edycja_rekordu.TabIndex = 16;
-            this.edycja_rekordu.Text = "Edytuj rekord";
+            this.edycja_rekordu.Text = "Edytuj produkt";
             this.edycja_rekordu.UseVisualStyleBackColor = true;
             this.edycja_rekordu.Click += new System.EventHandler(this.edycja_rekordu_Click);
             // 
@@ -181,7 +180,7 @@
             this.dodanie_rekordu.Name = "dodanie_rekordu";
             this.dodanie_rekordu.Size = new System.Drawing.Size(106, 53);
             this.dodanie_rekordu.TabIndex = 17;
-            this.dodanie_rekordu.Text = "Dodaj rekord";
+            this.dodanie_rekordu.Text = "Dodaj produkt";
             this.dodanie_rekordu.UseVisualStyleBackColor = true;
             this.dodanie_rekordu.Click += new System.EventHandler(this.dodanie_rekordu_Click);
             // 
@@ -200,7 +199,7 @@
             this.usun_rdk.Name = "usun_rdk";
             this.usun_rdk.Size = new System.Drawing.Size(106, 53);
             this.usun_rdk.TabIndex = 22;
-            this.usun_rdk.Text = "Usun rekord";
+            this.usun_rdk.Text = "Usun produkt";
             this.usun_rdk.UseVisualStyleBackColor = true;
             this.usun_rdk.Click += new System.EventHandler(this.usun_rdk_Click);
             // 
