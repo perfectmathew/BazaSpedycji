@@ -76,11 +76,35 @@
     <Compile Include="CarrierPanel.Designer.cs">
       <DependentUpon>CarrierPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodawaniePracownika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodawaniePracownika.Designer.cs">
+      <DependentUpon>DodawaniePracownika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodawanieSpedytora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodawanieSpedytora.Designer.cs">
+      <DependentUpon>DodawanieSpedytora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KlienciEdycja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KlienciEdycja.Designer.cs">
+      <DependentUpon>KlienciEdycja.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaySystem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PaySystem.Designer.cs">
       <DependentUpon>PaySystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PracownicyEdycja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PracownicyEdycja.Designer.cs">
+      <DependentUpon>PracownicyEdycja.cs</DependentUpon>
     </Compile>
     <Compile Include="ProduktEdycja.cs">
       <SubType>Form</SubType>
@@ -102,6 +126,12 @@
     <Compile Include="SingUp.Designer.cs">
       <DependentUpon>SingUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpedytorzyEdycja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpedytorzyEdycja.Designer.cs">
+      <DependentUpon>SpedytorzyEdycja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +146,12 @@
     <Compile Include="UserPanel.Designer.cs">
       <DependentUpon>UserPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZamowieniaEdycja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZamowieniaEdycja.Designer.cs">
+      <DependentUpon>ZamowieniaEdycja.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel.pl.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,14 +161,29 @@
     <EmbeddedResource Include="CarrierPanel.resx">
       <DependentUpon>CarrierPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DodawaniePracownika.resx">
+      <DependentUpon>DodawaniePracownika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodawanieSpedytora.resx">
+      <DependentUpon>DodawanieSpedytora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KlienciEdycja.resx">
+      <DependentUpon>KlienciEdycja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaySystem.resx">
       <DependentUpon>PaySystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PracownicyEdycja.resx">
+      <DependentUpon>PracownicyEdycja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProduktEdycja.resx">
       <DependentUpon>ProduktEdycja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SingUp.resx">
       <DependentUpon>SingUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpedytorzyEdycja.resx">
+      <DependentUpon>SpedytorzyEdycja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
@@ -149,6 +200,9 @@
     </Compile>
     <EmbeddedResource Include="UserPanel.resx">
       <DependentUpon>UserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZamowieniaEdycja.resx">
+      <DependentUpon>ZamowieniaEdycja.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MagazynSpedycjiDataSet.xsc">
       <DependentUpon>MagazynSpedycjiDataSet.xsd</DependentUpon>

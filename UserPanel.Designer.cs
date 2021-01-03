@@ -71,6 +71,9 @@
             this.showMore = new System.Windows.Forms.Button();
             this.IDOrder = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.deaktywacja_konta = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.akt_zalg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -457,11 +460,42 @@
             this.label15.TabIndex = 48;
             this.label15.Text = "ID Zamówienia:";
             // 
+            // deaktywacja_konta
+            // 
+            this.deaktywacja_konta.Location = new System.Drawing.Point(12, 471);
+            this.deaktywacja_konta.Name = "deaktywacja_konta";
+            this.deaktywacja_konta.Size = new System.Drawing.Size(189, 23);
+            this.deaktywacja_konta.TabIndex = 49;
+            this.deaktywacja_konta.Text = "Dezaktywuj konto";
+            this.deaktywacja_konta.UseVisualStyleBackColor = true;
+            this.deaktywacja_konta.Click += new System.EventHandler(this.deaktywacja_konta_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(222, 492);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(108, 13);
+            this.label16.TabIndex = 51;
+            this.label16.Text = "Login zalogowanego:";
+            // 
+            // akt_zalg
+            // 
+            this.akt_zalg.AutoSize = true;
+            this.akt_zalg.Location = new System.Drawing.Point(336, 492);
+            this.akt_zalg.Name = "akt_zalg";
+            this.akt_zalg.Size = new System.Drawing.Size(41, 13);
+            this.akt_zalg.TabIndex = 52;
+            this.akt_zalg.Text = "label17";
+            // 
             // UserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 511);
+            this.Controls.Add(this.akt_zalg);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.deaktywacja_konta);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.IDOrder);
             this.Controls.Add(this.showMore);
@@ -561,5 +595,8 @@
         private System.Windows.Forms.Button showMore;
         private System.Windows.Forms.TextBox IDOrder;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button deaktywacja_konta;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label akt_zalg;
     }
 }

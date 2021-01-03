@@ -74,3 +74,54 @@ G:\BazaSpedycji-main_03.12.2020\obj\Debug\Magazyn Spedycji.csproj.CoreCompileInp
 G:\BazaSpedycji-main_03.12.2020\obj\Debug\pl\Magazyn Spedycji.resources.dll
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.ProduktEdycja.resources
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.PaySystem.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.exe.config
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.exe
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.pdb
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\bin\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.AdminPanel.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.CarrierPanel.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.PaySystem.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.ProduktEdycja.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.SingUp.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.MagazynSpedycji.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.Properties.Resources.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.UserPanel.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.AdminPanel.pl.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csproj.GenerateResource.cache
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csproj.CoreCompileInputs.cache
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.exe
+C:\Users\wojna\Desktop\BazaSpedycji-main (1)\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.pdb
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.PaySystem.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.KlientEdycja.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.DodawanieSpedytora.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.DodawaniePracownika.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.SpedytorzyEdycja.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.PracownicyEdycja.resources
+C:\Users\wojna\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.ZamowieniaEdycja.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.exe.config
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.exe
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\bin\Debug\Magazyn Spedycji.pdb
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\bin\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.AdminPanel.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.CarrierPanel.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.DodawaniePracownika.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.DodawanieSpedytora.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.KlientEdycja.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.PaySystem.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.PracownicyEdycja.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.ProduktEdycja.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.SingUp.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.SpedytorzyEdycja.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.MagazynSpedycji.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.Properties.Resources.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.UserPanel.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.ZamowieniaEdycja.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn_Spedycji.AdminPanel.pl.resources
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csproj.GenerateResource.cache
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.csproj.CoreCompileInputs.cache
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\pl\Magazyn Spedycji.resources.dll
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.exe
+C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.pdb

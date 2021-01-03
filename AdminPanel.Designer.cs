@@ -37,9 +37,11 @@
             this.klienciTableAdapter = new Magazyn_Spedycji.MagazynSpedycjiDataSetTableAdapters.KlienciTableAdapter();
             this.pokaz_tabele = new System.Windows.Forms.Button();
             this.tabeleBox = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.edycja_rdk = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.spedyt_dodaj = new System.Windows.Forms.Button();
+            this.praco_dodaj = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazynSpedycjiDataSet)).BeginInit();
@@ -94,13 +96,6 @@
             resources.ApplyResources(this.tabeleBox, "tabeleBox");
             this.tabeleBox.Name = "tabeleBox";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Magazyn_Spedycji.Properties.Resources.logo;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
             // edycja_rdk
             // 
             resources.ApplyResources(this.edycja_rdk, "edycja_rdk");
@@ -113,10 +108,33 @@
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
+            // spedyt_dodaj
+            // 
+            resources.ApplyResources(this.spedyt_dodaj, "spedyt_dodaj");
+            this.spedyt_dodaj.Name = "spedyt_dodaj";
+            this.spedyt_dodaj.UseVisualStyleBackColor = true;
+            this.spedyt_dodaj.Click += new System.EventHandler(this.spedyt_dodaj_Click);
+            // 
+            // praco_dodaj
+            // 
+            resources.ApplyResources(this.praco_dodaj, "praco_dodaj");
+            this.praco_dodaj.Name = "praco_dodaj";
+            this.praco_dodaj.UseVisualStyleBackColor = true;
+            this.praco_dodaj.Click += new System.EventHandler(this.praco_dodaj_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Magazyn_Spedycji.Properties.Resources.logo;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // AdminPanel
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.praco_dodaj);
+            this.Controls.Add(this.spedyt_dodaj);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.edycja_rdk);
             this.Controls.Add(this.tabeleBox);
@@ -147,5 +165,7 @@
         private System.Windows.Forms.ComboBox tabeleBox;
         private System.Windows.Forms.Button edycja_rdk;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button spedyt_dodaj;
+        private System.Windows.Forms.Button praco_dodaj;
     }
 }

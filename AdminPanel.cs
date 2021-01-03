@@ -14,7 +14,7 @@ namespace Magazyn_Spedycji
     public partial class AdminPanel : Form
     {
        public CarrierPanel CarrierPanel { get; set; }
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
         public AdminPanel()
         {
             InitializeComponent();
@@ -65,7 +65,7 @@ namespace Magazyn_Spedycji
                 case 3:
                     OleDbCommand createPracownicy = new OleDbCommand();
                     createPracownicy.Connection = con;
-                    string queryPracownicy = "Select * from ZamZaku";
+                    string queryPracownicy = "Select * from Pracownicy";
                     createPracownicy.CommandText = queryPracownicy;
                     OleDbDataAdapter pracownicy = new OleDbDataAdapter(createPracownicy);
                     DataTable PracownicyTable = new DataTable();
@@ -98,9 +98,58 @@ namespace Magazyn_Spedycji
                     produktedycja = null;
                     this.Show();
                     break;
-               // case 1:
+               case 1:
+                    this.Hide();
+                    KlientEdycja klientedycja = new KlientEdycja();
+                    klientedycja.ShowDialog();
+                    klientedycja = null;
+                    this.Show();
+                    break;
+
+                case 2:
+                    this.Hide();
+                    SpedytorzyEdycja edytujspedytor = new SpedytorzyEdycja();
+                    edytujspedytor.ShowDialog();
+                    edytujspedytor = null;
+                    this.Show();
+                    break;
+                case 3:
+                    this.Hide();
+                    PracownicyEdycja edytujpracownik = new PracownicyEdycja();
+                    edytujpracownik.ShowDialog();
+                    edytujpracownik = null;
+                    this.Show();
+                    break;
+                case 4:
+                    this.Hide();
+                    ZamowieniaEdycja edytujzamowienia = new ZamowieniaEdycja();
+                    edytujzamowienia.ShowDialog();
+                    edytujzamowienia = null;
+                    this.Show();
+                    break;
+
+
+
             }
 
+        }
+
+        private void spedyt_dodaj_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DodawanieSpedytora spedytordodaj = new DodawanieSpedytora();
+            spedytordodaj.ShowDialog();
+            spedytordodaj = null;
+            this.Show();
+        }
+
+        private void praco_dodaj_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DodawaniePracownika pracownikdodaj = new DodawaniePracownika();
+            pracownikdodaj.ShowDialog();
+            pracownikdodaj = null;
+            this.Show();
         }
     }
 }

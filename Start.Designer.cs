@@ -60,6 +60,7 @@
             this.login_register.Name = "login_register";
             this.login_register.Size = new System.Drawing.Size(123, 20);
             this.login_register.TabIndex = 2;
+            this.login_register.TextChanged += new System.EventHandler(this.login_register_TextChanged);
             // 
             // UserAccessL
             // 
@@ -72,6 +73,7 @@
             this.UserAccessL.Name = "UserAccessL";
             this.UserAccessL.Size = new System.Drawing.Size(123, 21);
             this.UserAccessL.TabIndex = 3;
+            this.UserAccessL.SelectedIndexChanged += new System.EventHandler(this.UserAccessL_SelectedIndexChanged);
             // 
             // LoginButton
             // 
@@ -99,10 +101,10 @@
             // loginString
             // 
             this.loginString.AutoSize = true;
-            this.loginString.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.loginString.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.loginString.Location = new System.Drawing.Point(423, 335);
             this.loginString.Name = "loginString";
-            this.loginString.Size = new System.Drawing.Size(128, 25);
+            this.loginString.Size = new System.Drawing.Size(125, 25);
             this.loginString.TabIndex = 6;
             this.loginString.Text = "Logowanie";
             this.loginString.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -206,7 +208,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox register_password;
-        private System.Windows.Forms.TextBox login_register;
         private System.Windows.Forms.ComboBox UserAccessL;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -218,6 +219,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox PasswordReval;
+        public System.Windows.Forms.TextBox login_register;
     }
 }
 

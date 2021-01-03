@@ -13,11 +13,12 @@ namespace Magazyn_Spedycji
   
     public partial class MagazynSpedycji : Form
     {
+        
         private AdminPanel adminPanel;
         private CarrierPanel carrierPanel;
         private UserPanel userPanel;
         private SingUp SingUp;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
         private void hideloginelement()
         {
             label1.Hide();
@@ -146,7 +147,10 @@ namespace Magazyn_Spedycji
                 }
                 con.Close();
             }
-        
+
+            
+            
+
         }
         private void SingInSwitch_Click(object sender, EventArgs e)
         {
@@ -177,6 +181,16 @@ namespace Magazyn_Spedycji
                 register_password.UseSystemPasswordChar = false;
             }
             else register_password.UseSystemPasswordChar = true;
+        }
+
+        private void login_register_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserAccessL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

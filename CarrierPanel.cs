@@ -19,7 +19,7 @@ namespace Magazyn_Spedycji
         string TelefonSpedytora;
         string LoginSpedytora;
         string HasloSpedytora;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
         public CarrierPanel()
         {
             InitializeComponent();
@@ -182,6 +182,9 @@ namespace Magazyn_Spedycji
 
         }
 
+        private void changedataswitch_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

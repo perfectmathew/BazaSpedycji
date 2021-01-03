@@ -17,7 +17,7 @@ namespace Magazyn_Spedycji
         bool poprawne = false;
         int kolumna = 0;
 
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
         public ProduktEdycja()
         {
             InitializeComponent();
@@ -152,6 +152,11 @@ namespace Magazyn_Spedycji
                 
             }
         
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

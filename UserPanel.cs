@@ -28,11 +28,18 @@ namespace Magazyn_Spedycji
         string loginKlienta;
         string hasloKlienta;
         private PaySystem paySystem;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
+        
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
+
+        
+        
+        
         public UserPanel()
         {
             InitializeComponent();
+          
         }
+
 
         public void UserCondiction(string LoginValue)
         {
@@ -211,6 +218,8 @@ namespace Magazyn_Spedycji
             CreateOrder.Hide();
             DeleteFromCart.Hide();
             label1.Text = "ID KLIENTA: " + UserValue ;
+
+            
             
         }
         private void button3_Click(object sender, EventArgs e)
@@ -429,5 +438,20 @@ namespace Magazyn_Spedycji
                 con.Close();
             }
         }
+
+        private void deaktywacja_konta_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand laczenie = new OleDbCommand();
+            laczenie.Connection = con;
+            //string queryUsun = "DELETE FROM Klienci WHERE Login=" + akutalnie_zalogowany.Text;
+           // laczenie.CommandText = queryUsun;
+           // laczenie.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("blablalba"); //tutaj mialabyc dezaktywacja konta ale co mi sie nie chca wartoci przesylac z jednego forma do drugiego i nie ogarniam dlaczego jak ogarniesz to wyswietlanie to w kwerendzie wystarczy na koncu podtawic pole z loginem akutalnie zalogowanego uzytkownika
+
+
+        }
+        
     }
 }

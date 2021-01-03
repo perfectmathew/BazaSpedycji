@@ -146,6 +146,7 @@
             this.changedataswitch.TabIndex = 15;
             this.changedataswitch.Text = "Zmień Swoje Dane";
             this.changedataswitch.UseVisualStyleBackColor = true;
+            this.changedataswitch.Click += new System.EventHandler(this.changedataswitch_Click);
             // 
             // CarrierPanel
             // 

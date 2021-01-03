@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 8</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <metadata name="klienciBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>205, 17</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pokaz_tabele.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="tabeleBox.Items" xml:space="preserve">
     <value>Produkty</value>
@@ -220,7 +220,7 @@
     <value>Spedytorzy</value>
   </data>
   <data name="tabeleBox.Items3" xml:space="preserve">
-    <value>Transakcje</value>
+    <value>Pracownicy</value>
   </data>
   <data name="tabeleBox.Items4" xml:space="preserve">
     <value>Zamówienia</value>
@@ -244,7 +244,121 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabeleBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="edycja_rdk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="edycja_rdk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 176</value>
+  </data>
+  <data name="edycja_rdk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 28</value>
+  </data>
+  <data name="edycja_rdk.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="edycja_rdk.Text" xml:space="preserve">
+    <value>Edytuj dane</value>
+  </data>
+  <data name="&gt;&gt;edycja_rdk.Name" xml:space="preserve">
+    <value>edycja_rdk</value>
+  </data>
+  <data name="&gt;&gt;edycja_rdk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;edycja_rdk.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;edycja_rdk.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.249999pt</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 123</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 24</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Tabele</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="spedyt_dodaj.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="spedyt_dodaj.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 234</value>
+  </data>
+  <data name="spedyt_dodaj.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 46</value>
+  </data>
+  <data name="spedyt_dodaj.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="spedyt_dodaj.Text" xml:space="preserve">
+    <value>Dodaj spedytora</value>
+  </data>
+  <data name="&gt;&gt;spedyt_dodaj.Name" xml:space="preserve">
+    <value>spedyt_dodaj</value>
+  </data>
+  <data name="&gt;&gt;spedyt_dodaj.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spedyt_dodaj.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;spedyt_dodaj.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="praco_dodaj.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="praco_dodaj.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 286</value>
+  </data>
+  <data name="praco_dodaj.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 46</value>
+  </data>
+  <data name="praco_dodaj.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="praco_dodaj.Text" xml:space="preserve">
+    <value>Dodaj pracownika</value>
+  </data>
+  <data name="&gt;&gt;praco_dodaj.Name" xml:space="preserve">
+    <value>praco_dodaj</value>
+  </data>
+  <data name="&gt;&gt;praco_dodaj.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;praco_dodaj.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;praco_dodaj.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -271,61 +385,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="edycja_rdk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 176</value>
-  </data>
-  <data name="edycja_rdk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 28</value>
-  </data>
-  <data name="edycja_rdk.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="edycja_rdk.Text" xml:space="preserve">
-    <value>Edytuj dane</value>
-  </data>
-  <data name="&gt;&gt;edycja_rdk.Name" xml:space="preserve">
-    <value>edycja_rdk</value>
-  </data>
-  <data name="&gt;&gt;edycja_rdk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;edycja_rdk.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;edycja_rdk.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Uni Sans Thin CAPS, 14.249999pt</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 123</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 23</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Tabele</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>8</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

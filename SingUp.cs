@@ -8,22 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Text.RegularExpressions;
 namespace Magazyn_Spedycji
 {
     public partial class SingUp : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\MagazynSpedycji.accdb");
+        bool poprawnoc_hasla = false;
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
         public SingUp()
         {
             InitializeComponent();
         }
 
+        public void sprawdz_haslo()
+        {
+            Regex r_haslo = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,15}$");
+            if (r_haslo.IsMatch(Pass.Text))
+            {
+                poprawnoc_hasla = true;
+            }
+        }
+
+
         private void SingUpButton_Click(object sender, EventArgs e)
         {
+            sprawdz_haslo();
 
-            if (FirstName.Text == "" || SurrName.Text == "" || mail.Text == "" || Login.Text == "" || Pass.Text == "")
+            if (FirstName.Text == "" || SurrName.Text == "" || mail.Text == "" || Login.Text == "")
             {
                 MessageBox.Show("Uzupełnij wszystkie pola!");
+            }
+            else if (poprawnoc_hasla == false) 
+            {
+
+                MessageBox.Show("Haslo musi skladac sie conajmniej z 8 znakow litery i cyfry");
+
             }
             else
             {
@@ -74,6 +93,11 @@ namespace Magazyn_Spedycji
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void Pass_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
