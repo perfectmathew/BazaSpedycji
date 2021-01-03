@@ -17,7 +17,7 @@ namespace Magazyn_Spedycji
    
     public partial class KlientEdycja : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
         int kolumna = 0;
         bool poprawne = false;
         public KlientEdycja()

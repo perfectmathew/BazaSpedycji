@@ -19,10 +19,12 @@ namespace Magazyn_Spedycji
         string TelefonSpedytora;
         string LoginSpedytora;
         string HasloSpedytora;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
+        private USerControls.CarrierUC carrierV;
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
         public CarrierPanel()
         {
             InitializeComponent();
+
         }
         private void odswiez()
         {
@@ -70,10 +72,22 @@ namespace Magazyn_Spedycji
             HasloSpedytora = (string)getHaslo.ExecuteScalar();
             con.Close();
         }
+        private void hideorderticket()
+        {
+            IDZamText.Hide();
+            StanZamText.Hide();
+            dataGridView1.Hide();
+            IDZamField.Hide();
+            StatusOrderCombo.Hide();
+            UpdateOrderButton.Hide();
+           
+        }
         private void CarrierPanel_Load(object sender, EventArgs e)
         {
-            IDspedy.Text = "Twoje unikalne ID: "+CarrierValue;
             getData();
+            CarrierEditData.Hide();
+            IDspedy.Text = "Witaj, "+imieSpedytora;
+   
          //   MessageBox.Show(imieSpedytora+nazwiskoSpedytora+EmailSpedytora+TelefonSpedytora+LoginSpedytora+HasloSpedytora);
             con.Open();
             OleDbCommand createSpedytorzy = new OleDbCommand();
@@ -184,6 +198,24 @@ namespace Magazyn_Spedycji
 
         private void changedataswitch_Click(object sender, EventArgs e)
         {
+
+            con.Open();
+            CarrierEditData.Show();
+            hideorderticket();
+            USerControls.CarrierUC uC = new USerControls.CarrierUC() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            OleDbCommand newcarrier = new OleDbCommand();
+            newcarrier.Connection = con;
+            newcarrier.CommandText = "select ID from Spedytorzy where ID="+CarrierValue+"";
+            Int32 IDK = (Int32)newcarrier.ExecuteScalar();
+            uC.next(IDK.ToString());
+            con.Close();
+            this.CarrierEditData.Controls.Add(uC);
+            uC.Show();
+        }
+        private void OrdresSwitch_Click(object sender, EventArgs e)
+        {
+
+            CarrierEditData.Hide();
 
         }
     }

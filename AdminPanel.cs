@@ -14,7 +14,7 @@ namespace Magazyn_Spedycji
     public partial class AdminPanel : Form
     {
        public CarrierPanel CarrierPanel { get; set; }
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
         public AdminPanel()
         {
             InitializeComponent();

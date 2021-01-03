@@ -130,6 +130,7 @@
             this.edycja_zamowienia.TabIndex = 11;
             this.edycja_zamowienia.Text = "Edytuj";
             this.edycja_zamowienia.UseVisualStyleBackColor = true;
+            this.edycja_zamowienia.Click += new System.EventHandler(this.edycja_zamowienia_Click);
             // 
             // button2
             // 

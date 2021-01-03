@@ -14,7 +14,7 @@ namespace Magazyn_Spedycji
     public partial class ZamowieniaEdycja : Form
     {
         int kolumna = 0;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
         public ZamowieniaEdycja()
         {
             InitializeComponent();
@@ -52,6 +52,11 @@ namespace Magazyn_Spedycji
                 uwagi_zam.Text = kol.Cells[9].Value.ToString();
                 idstan_zam.Text = kol.Cells[10].Value.ToString();
             }
+        }
+
+        private void edycja_zamowienia_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

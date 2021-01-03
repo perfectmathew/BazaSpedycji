@@ -20,7 +20,6 @@ C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.exe
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\Magazyn Spedycji.pdb
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\bin\Debug\pl\Magazyn Spedycji.resources.dll
-C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.AdminPanel.resources
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.CarrierPanel.resources
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.SingUp.resources
@@ -125,3 +124,10 @@ C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.cspr
 C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\pl\Magazyn Spedycji.resources.dll
 C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.exe
 C:\Users\Perfectamthew\Desktop\BazaSpedycji-main\obj\Debug\Magazyn Spedycji.pdb
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.DodawaniePracownika.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.DodawanieSpedytora.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.KlientEdycja.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.PracownicyEdycja.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.SpedytorzyEdycja.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.ZamowieniaEdycja.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.USerControls.CarrierUC.resources

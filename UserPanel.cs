@@ -28,12 +28,12 @@ namespace Magazyn_Spedycji
         string loginKlienta;
         string hasloKlienta;
         private PaySystem paySystem;
-        
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
 
-        
-        
-        
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+
+
+
+
         public UserPanel()
         {
             InitializeComponent();

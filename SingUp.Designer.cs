@@ -83,12 +83,16 @@
             // 
             // SingUpButton
             // 
+            this.SingUpButton.BackColor = System.Drawing.SystemColors.Desktop;
+            this.SingUpButton.FlatAppearance.BorderSize = 0;
+            this.SingUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SingUpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.SingUpButton.Location = new System.Drawing.Point(190, 108);
             this.SingUpButton.Name = "SingUpButton";
             this.SingUpButton.Size = new System.Drawing.Size(100, 29);
             this.SingUpButton.TabIndex = 5;
             this.SingUpButton.Text = "Zarejestruj";
-            this.SingUpButton.UseVisualStyleBackColor = true;
+            this.SingUpButton.UseVisualStyleBackColor = false;
             this.SingUpButton.Click += new System.EventHandler(this.SingUpButton_Click);
             // 
             // label1
@@ -148,12 +152,16 @@
             // 
             // ExitButton
             // 
+            this.ExitButton.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ExitButton.Location = new System.Drawing.Point(84, 144);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(206, 23);
             this.ExitButton.TabIndex = 12;
             this.ExitButton.Text = "Już mam konto";
-            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // SingUp
@@ -174,7 +182,7 @@
             this.Controls.Add(this.mail);
             this.Controls.Add(this.SurrName);
             this.Controls.Add(this.FirstName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SingUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

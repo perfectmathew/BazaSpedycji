@@ -18,9 +18,10 @@ namespace Magazyn_Spedycji
         private CarrierPanel carrierPanel;
         private UserPanel userPanel;
         private SingUp SingUp;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\wojna\Desktop\BazaSpedycji-main\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
         private void hideloginelement()
         {
+     
             label1.Hide();
             label2.Hide();
             label3.Hide();
@@ -46,6 +47,7 @@ namespace Magazyn_Spedycji
         public MagazynSpedycji()
         {
             InitializeComponent();
+            RegisterPanel.Hide();
             hideloginelement();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -155,16 +157,24 @@ namespace Magazyn_Spedycji
         private void SingInSwitch_Click(object sender, EventArgs e)
         {
             showloginelement();
+
+            RegisterPanel.Hide();
         }
         private void SingUpSwitch_Click(object sender, EventArgs e)
         {
-
+            hideloginelement();
+         
+            RegisterPanel.Show();
+            SingUp zarejestruj = new SingUp() {Dock=DockStyle.Fill, TopLevel=false, TopMost=true};
+            this.RegisterPanel.Controls.Add(zarejestruj);
+            zarejestruj.Show();
+            /*
             this.Hide();
 
             SingUp singUp = new SingUp();
             singUp.ShowDialog();
             singUp = null;
-            this.Show();
+            this.Show();*/
         }
         private void DevButton_Click(object sender, EventArgs e)
         {
