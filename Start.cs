@@ -14,10 +14,7 @@ namespace Magazyn_Spedycji
     public partial class MagazynSpedycji : Form
     {
         
-        private AdminPanel adminPanel;
-        private CarrierPanel carrierPanel;
-        private UserPanel userPanel;
-        private SingUp SingUp;
+      
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
         private void hideloginelement()
         {
@@ -72,11 +69,16 @@ namespace Magazyn_Spedycji
                 }
                 if (count == 1)
                 {
+                    OleDbCommand Admin = new OleDbCommand();
+                    Admin.Connection = con;
+                    Admin.CommandText = "select ID from Pracownicy where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                    Int32 IDK = (Int32)Admin.ExecuteScalar();
                     this.Hide();
-                    AdminPanel adminPanel = new AdminPanel();
-                    adminPanel.ShowDialog();
-                    adminPanel = null;
-                    this.Show();
+                    AdminPanel admin = new AdminPanel();
+                    admin.AdminCondiciont(IDK.ToString());
+                    admin.ShowDialog();
+                    admin = null;
+                    this.Show(); ;
                 }
              else
                 {

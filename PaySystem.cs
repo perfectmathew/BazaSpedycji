@@ -53,7 +53,7 @@ namespace Magazyn_Spedycji
             OleDbCommand search = new OleDbCommand();
             search.Connection = con;
            search.CommandText = "SELECT Produkty.ID, Produkty.Ilosc-SzczegolyZamowienia.Ilosc AS Wyr1 FROM Produkty INNER JOIN(Klienci INNER JOIN SzczegolyZamowienia ON Klienci.ID = SzczegolyZamowienia.IDKlienta) ON Produkty.ID = SzczegolyZamowienia.IdProduktu WHERE SzczegolyZamowienia.IdZamowienia = " + Convert.ToInt32(CurentOrder) + " AND Klienci.ID=" + Convert.ToInt32(UserValue) + "";
-            int count = 0;
+           // int count = 0;
             OleDbDataReader reader = search.ExecuteReader();
             while (reader.Read())
             {

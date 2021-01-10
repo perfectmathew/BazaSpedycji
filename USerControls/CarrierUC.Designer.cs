@@ -42,6 +42,10 @@
             this.SurrnameText = new System.Windows.Forms.TextBox();
             this.NameText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // UpdateCarrirerData
@@ -125,6 +129,7 @@
             this.PassText.Name = "PassText";
             this.PassText.Size = new System.Drawing.Size(143, 20);
             this.PassText.TabIndex = 3;
+            this.PassText.UseSystemPasswordChar = true;
             // 
             // LoginText
             // 
@@ -201,11 +206,51 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Twoje Dane:";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(448, 344);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Nexa Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(252, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(248, 36);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Panel Spedytora";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel1.Location = new System.Drawing.Point(254, 108);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(16, 292);
+            this.panel1.TabIndex = 18;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel2.Location = new System.Drawing.Point(480, 108);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(16, 292);
+            this.panel2.TabIndex = 18;
+            // 
             // CarrierUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 488);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.UpdateCarrirerData);
             this.Controls.Add(this.label6);
@@ -245,5 +290,9 @@
         private System.Windows.Forms.TextBox SurrnameText;
         private System.Windows.Forms.TextBox NameText;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

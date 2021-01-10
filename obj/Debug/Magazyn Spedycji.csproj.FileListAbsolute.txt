@@ -129,5 +129,11 @@ C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.KlientEdycja.resources
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.PracownicyEdycja.resources
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.SpedytorzyEdycja.resources
-C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.ZamowieniaEdycja.resources
 C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.USerControls.CarrierUC.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.USerControls.UserUC.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.USerControls.ShopUC.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.USerControls.UserOrdersUC.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.USerControls.CarrierOrdersUC.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.AdminControls.AdminShopUC.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn_Spedycji.AdminControls.AdminDashboardUC.resources
+C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\obj\Debug\Magazyn Spedycji.csprojAssemblyReference.cache

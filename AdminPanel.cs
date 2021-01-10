@@ -15,125 +15,19 @@ namespace Magazyn_Spedycji
     {
        public CarrierPanel CarrierPanel { get; set; }
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        string AdminValue;
+        int AdminRole;
         public AdminPanel()
         {
             InitializeComponent();
+            if (con.State.Equals("Open")) { con.Close(); }
             dataGridView1.Hide();
         }
-
-        private void pokaz_tabele_Click(object sender, EventArgs e)
+        public void AdminCondiciont(string LoginValue)
         {
-            dataGridView1.Show();
-            con.Open();
-            //OleDbCommand createProdukty = new OleDbCommand();
-            //createProdukty.Connection = con;
-            switch (tabeleBox.SelectedIndex)
-            {
-                case 0:
-                    OleDbCommand createProdukty = new OleDbCommand();
-                    createProdukty.Connection = con;
-                    string queryProdukty = "Select * from Produkty order by ID ASC";
-                    createProdukty.CommandText = queryProdukty;
-                    OleDbDataAdapter produkty = new OleDbDataAdapter(createProdukty);
-                    DataTable tabelaProdukty = new DataTable();
-                    produkty.Fill(tabelaProdukty);
-                    dataGridView1.DataSource = tabelaProdukty;
-                    con.Close();
-                    break;
-                case 1:
-                    OleDbCommand createKlienci = new OleDbCommand();
-                    createKlienci.Connection = con;
-                    string queryKlienci = "Select * from Klienci order by ID ASC ";
-                    createKlienci.CommandText = queryKlienci;
-                    OleDbDataAdapter klienci = new OleDbDataAdapter(createKlienci);
-                    DataTable KlienciTable = new DataTable();
-                    klienci.Fill(KlienciTable);
-                    dataGridView1.DataSource = KlienciTable;
-                    con.Close();
-                    break;
-                case 2:
-                    OleDbCommand createDostawcy = new OleDbCommand();
-                    createDostawcy.Connection = con;
-                    string queryDostawcy = "Select * from Spedytorzy";
-                    createDostawcy.CommandText = queryDostawcy;
-                    OleDbDataAdapter dostawcy = new OleDbDataAdapter(createDostawcy);
-                    DataTable DostawcyTable = new DataTable();
-                    dostawcy.Fill(DostawcyTable);
-                    dataGridView1.DataSource = DostawcyTable;
-                    con.Close();
-                    break;
-                case 3:
-                    OleDbCommand createPracownicy = new OleDbCommand();
-                    createPracownicy.Connection = con;
-                    string queryPracownicy = "Select * from Pracownicy";
-                    createPracownicy.CommandText = queryPracownicy;
-                    OleDbDataAdapter pracownicy = new OleDbDataAdapter(createPracownicy);
-                    DataTable PracownicyTable = new DataTable();
-                    pracownicy.Fill(PracownicyTable);
-                    dataGridView1.DataSource = PracownicyTable;
-                    con.Close();
-                    break;
-                case 4:
-                    OleDbCommand createZamowienia = new OleDbCommand();
-                    createZamowienia.Connection = con;
-                    string queryZamowienia = "Select * from Zamowienia";
-                    createZamowienia.CommandText = queryZamowienia;
-                    OleDbDataAdapter zamowienia = new OleDbDataAdapter(createZamowienia);
-                    DataTable ZamowieniaTable = new DataTable();
-                    zamowienia.Fill(ZamowieniaTable);
-                    dataGridView1.DataSource = ZamowieniaTable;
-                    con.Close();
-                    break;
-            }
+            AdminValue = LoginValue;
         }
-
-        private void edycja_rdk_Click(object sender, EventArgs e)
-        {
-            switch (tabeleBox.SelectedIndex)
-            {
-                case 0:
-                    this.Hide();
-                    ProduktEdycja produktedycja = new ProduktEdycja();
-                    produktedycja.ShowDialog();
-                    produktedycja = null;
-                    this.Show();
-                    break;
-               case 1:
-                    this.Hide();
-                    KlientEdycja klientedycja = new KlientEdycja();
-                    klientedycja.ShowDialog();
-                    klientedycja = null;
-                    this.Show();
-                    break;
-
-                case 2:
-                    this.Hide();
-                    SpedytorzyEdycja edytujspedytor = new SpedytorzyEdycja();
-                    edytujspedytor.ShowDialog();
-                    edytujspedytor = null;
-                    this.Show();
-                    break;
-                case 3:
-                    this.Hide();
-                    PracownicyEdycja edytujpracownik = new PracownicyEdycja();
-                    edytujpracownik.ShowDialog();
-                    edytujpracownik = null;
-                    this.Show();
-                    break;
-                case 4:
-                    this.Hide();
-                    ZamowieniaEdycja edytujzamowienia = new ZamowieniaEdycja();
-                    edytujzamowienia.ShowDialog();
-                    edytujzamowienia = null;
-                    this.Show();
-                    break;
-
-
-
-            }
-
-        }
-
+        AdminControls.AdminDashboardUC dashboardUC = new AdminControls.AdminDashboardUC() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
         private void spedyt_dodaj_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -142,7 +36,6 @@ namespace Magazyn_Spedycji
             spedytordodaj = null;
             this.Show();
         }
-
         private void praco_dodaj_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -150,6 +43,31 @@ namespace Magazyn_Spedycji
             pracownikdodaj.ShowDialog();
             pracownikdodaj = null;
             this.Show();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void AdminPanel_Load(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand getPerm = new OleDbCommand();
+            getPerm.Connection = con;
+            getPerm.CommandText = "SELECT Rola FROM Pracownicy WHERE ID="+AdminValue;
+            AdminRole = Convert.ToInt32(getPerm.ExecuteScalar());
+            con.Close();
+            dashboardUC.AdminUC(AdminValue);
+            this.AdminControlPanel.Controls.Add(dashboardUC);
+            dashboardUC.Show();
+            this.AdminControlPanel.BringToFront();
+            if (AdminRole == 1)
+            {
+                label3.Text = "Dashboard/Pracownik";
+            }
+            else if (AdminRole == 2)
+            {
+                label3.Text = "Dashboard/Administrator";
+            }
         }
     }
 }

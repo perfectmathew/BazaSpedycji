@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Data.OleDb;
 namespace Magazyn_Spedycji.USerControls
@@ -70,12 +71,34 @@ namespace Magazyn_Spedycji.USerControls
         }
         private void UpdateCarrirerData_Click(object sender, EventArgs e)
         {
-
+            Regex phone = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{3}$");
+            Regex email = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            if (!email.IsMatch(EmailText.Text) || !phone.IsMatch(PhoneText.Text) || NameText.Text=="" || SurrnameText.Text=="" || EmailText.Text=="" || PhoneText.Text=="" || LoginText.Text=="" || PassText.Text=="")
+            {
+                MessageBox.Show("Podałeś niepoprawne dane!");
+            }else
+            {
+                con.Open();
+                OleDbCommand updater = new OleDbCommand();
+                updater.Connection = con;
+                string query = "UPDATE Spedytorzy SET Imie='"+NameText.Text+"', Nazwisko='"+SurrnameText.Text+"', Email='"+EmailText.Text+"', Telefon='"+PhoneText.Text+"', Login='"+LoginText.Text+"', Haslo='"+PassText.Text+"' WHERE ID="+CarrierValue;
+                updater.CommandText = query;
+                updater.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Pomyślnie zaktualizowano dane!");
+                getData();
+            }
         }
 
         private void CarrierUC_Load(object sender, EventArgs e)
         {
             getData();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == false) PassText.UseSystemPasswordChar = true;
+            else if (checkBox1.Checked == true) PassText.UseSystemPasswordChar = false;
         }
     }
 }

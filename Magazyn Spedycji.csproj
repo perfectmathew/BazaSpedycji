@@ -64,6 +64,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminControls\AdminDashboardUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminControls\AdminDashboardUC.Designer.cs">
+      <DependentUpon>AdminDashboardUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\AdminShopUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminControls\AdminShopUC.Designer.cs">
+      <DependentUpon>AdminShopUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,11 +152,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="USerControls\CarrierOrdersUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USerControls\CarrierOrdersUC.Designer.cs">
+      <DependentUpon>CarrierOrdersUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="USerControls\CarrierUC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="USerControls\CarrierUC.Designer.cs">
       <DependentUpon>CarrierUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USerControls\ShopUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USerControls\ShopUC.Designer.cs">
+      <DependentUpon>ShopUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USerControls\UserOrdersUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USerControls\UserOrdersUC.Designer.cs">
+      <DependentUpon>UserOrdersUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USerControls\UserUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USerControls\UserUC.Designer.cs">
+      <DependentUpon>UserUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UserPanel.cs">
       <SubType>Form</SubType>
@@ -152,12 +188,12 @@
     <Compile Include="UserPanel.Designer.cs">
       <DependentUpon>UserPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="ZamowieniaEdycja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ZamowieniaEdycja.Designer.cs">
-      <DependentUpon>ZamowieniaEdycja.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="AdminControls\AdminDashboardUC.resx">
+      <DependentUpon>AdminDashboardUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminControls\AdminShopUC.resx">
+      <DependentUpon>AdminShopUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel.pl.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,14 +240,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="USerControls\CarrierOrdersUC.resx">
+      <DependentUpon>CarrierOrdersUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USerControls\CarrierUC.resx">
       <DependentUpon>CarrierUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="USerControls\ShopUC.resx">
+      <DependentUpon>ShopUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USerControls\UserOrdersUC.resx">
+      <DependentUpon>UserOrdersUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USerControls\UserUC.resx">
+      <DependentUpon>UserUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserPanel.resx">
       <DependentUpon>UserPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ZamowieniaEdycja.resx">
-      <DependentUpon>ZamowieniaEdycja.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MagazynSpedycjiDataSet.xsc">
       <DependentUpon>MagazynSpedycjiDataSet.xsd</DependentUpon>
@@ -240,11 +285,25 @@
   <ItemGroup>
     <None Include="Images\login.png" />
     <None Include="Images\cash.png" />
+    <None Include="Images\checkout.png" />
+    <None Include="Images\cart.png" />
+    <None Include="Images\add.png" />
+    <None Include="Images\edit.png" />
+    <None Include="Images\delete.png" />
+    <None Include="Images\CarriersControl.png" />
     <Content Include="Images\logo.ico" />
     <Content Include="Images\logo.png" />
     <None Include="Images\register.png" />
     <None Include="Images\usericon.png" />
     <None Include="Images\orders.png" />
+    <None Include="Images\shop.png" />
+    <None Include="Images\searchicon.png" />
+    <None Include="Images\logout.png" />
+    <None Include="Images\random-small.png" />
+    <None Include="Images\ordersControl.png" />
+    <None Include="Images\ProductControl.png" />
+    <None Include="Images\usersControl.png" />
+    <None Include="Images\workersControl.png" />
     <Content Include="logo.ico" />
     <None Include="Resources\logo.png" />
   </ItemGroup>

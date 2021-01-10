@@ -40,9 +40,7 @@ namespace Magazyn_Spedycji
             }
             else if (poprawnoc_hasla == false) 
             {
-
-                MessageBox.Show("Haslo musi skladac sie conajmniej z 8 znakow litery i cyfry");
-
+                MessageBox.Show("Hasło musi składac się z conajmniej z 8 znakow, 1 dużej litery i cyfry");
             }
             else
             {
