@@ -36,14 +36,7 @@ namespace Magazyn_Spedycji
             spedytordodaj = null;
             this.Show();
         }
-        private void praco_dodaj_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            DodawaniePracownika pracownikdodaj = new DodawaniePracownika();
-            pracownikdodaj.ShowDialog();
-            pracownikdodaj = null;
-            this.Show();
-        }
+    
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

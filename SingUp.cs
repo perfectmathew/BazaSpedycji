@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
+using System.IO;
+using AESCrypto;
 namespace Magazyn_Spedycji
 {
     public partial class SingUp : Form
@@ -19,7 +21,6 @@ namespace Magazyn_Spedycji
         {
             InitializeComponent();
         }
-
         public void sprawdz_haslo()
         {
             Regex r_haslo = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,15}$");
@@ -28,12 +29,10 @@ namespace Magazyn_Spedycji
                 poprawnoc_hasla = true;
             }
         }
-
-
         private void SingUpButton_Click(object sender, EventArgs e)
         {
             sprawdz_haslo();
-
+            Regex email = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             if (FirstName.Text == "" || SurrName.Text == "" || mail.Text == "" || Login.Text == "")
             {
                 MessageBox.Show("Uzupełnij wszystkie pola!");
@@ -41,6 +40,10 @@ namespace Magazyn_Spedycji
             else if (poprawnoc_hasla == false) 
             {
                 MessageBox.Show("Hasło musi składac się z conajmniej z 8 znakow, 1 dużej litery i cyfry");
+            }
+            else if (!email.IsMatch(mail.Text))
+            {
+                MessageBox.Show("Nieprawidłowy format adresu Email");
             }
             else
             {
@@ -59,9 +62,10 @@ namespace Magazyn_Spedycji
                     }
                     if (count == 0)
                     {
+                        string encusr = Encyryption.Encrypt(Pass.Text);
                         OleDbCommand cmd = new OleDbCommand();
                         cmd.Connection = con;
-                        cmd.CommandText = "INSERT INTO Klienci(Imie,Nazwisko,Email,Login,Haslo) values('" + FirstName.Text + "','" + SurrName.Text + "','" + mail.Text + "','" + Login.Text + "','" + Pass.Text + "') ";
+                        cmd.CommandText = "INSERT INTO Klienci(Imie,Nazwisko,Email,Login,Haslo) values('" + FirstName.Text + "','" + SurrName.Text + "','" + mail.Text + "','" + Login.Text + "','" + encusr + "') ";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Pomyślnie zarejestrowano!");
                         this.Hide();
@@ -73,12 +77,8 @@ namespace Magazyn_Spedycji
                 {
                     MessageBox.Show("Unexcpected Error: " + ex);
                 }
-            }
-          
-           
-
+            }  
         }
-
         private void PassSwitch_CheckedChanged(object sender, EventArgs e)
         {
             if (PassSwitch.Checked)
@@ -87,15 +87,9 @@ namespace Magazyn_Spedycji
             }
             else Pass.UseSystemPasswordChar = true;
         }
-
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-        private void Pass_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

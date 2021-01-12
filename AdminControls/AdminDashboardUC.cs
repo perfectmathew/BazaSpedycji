@@ -44,7 +44,6 @@ namespace Magazyn_Spedycji.AdminControls
             label1.Text = "Witaj, " + AdminName+"!";
           
         }
-
         private void Pracownicy_Click(object sender, EventArgs e)
         {
             if (AdminRole == 1)
@@ -78,10 +77,47 @@ namespace Magazyn_Spedycji.AdminControls
         }
         private void CarrierControl_Click(object sender, EventArgs e)
         {
+            con.Open();
+            OleDbCommand Admin = new OleDbCommand();
+            Admin.Connection = con;
+            Admin.CommandText = "select ID from Pracownicy where ID=" + AdminValue + "";
+            Int32 IDK = (Int32)Admin.ExecuteScalar();
+            con.Close();
             this.Hide();
             SpedytorzyEdycja edytujspedytor = new SpedytorzyEdycja();
+            edytujspedytor.PermisionLevelUC(IDK.ToString());
             edytujspedytor.ShowDialog();
             edytujspedytor = null;
+            this.Show();
+        }
+        private void Orders_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand Admin = new OleDbCommand();
+            Admin.Connection = con;
+            Admin.CommandText = "select ID from Pracownicy where ID=" + AdminValue + "";
+            Int32 IDK = (Int32)Admin.ExecuteScalar();
+            con.Close();
+            this.Hide();
+            AdminControls.AdminOrdersUC ordersUC = new AdminOrdersUC();
+            ordersUC.PermisionLevelUC(IDK.ToString());
+            ordersUC.ShowDialog();
+            ordersUC = null;
+            this.Show();
+        }
+        private void DataControl_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand Admin = new OleDbCommand();
+            Admin.Connection = con;
+            Admin.CommandText = "select ID from Pracownicy where ID=" + AdminValue + "";
+            Int32 IDK = (Int32)Admin.ExecuteScalar();
+            con.Close();
+            this.Hide();
+            AdminControls.edit_data AdmindataUC = new edit_data();
+            AdmindataUC.AdminCon(IDK.ToString());
+            AdmindataUC.ShowDialog();
+            AdmindataUC = null;
             this.Show();
         }
     }

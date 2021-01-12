@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
+using AESCrypto;
 namespace Magazyn_Spedycji
 {
   
     public partial class MagazynSpedycji : Form
-    {
-        
-      
+    {      
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
         private void hideloginelement()
         {
@@ -56,11 +56,12 @@ namespace Magazyn_Spedycji
             }
             if (UserAccessL.SelectedIndex == 0)
             {
-               
                 con.Open();
+             
+                string encusr = Encyryption.Encrypt(register_password.Text);
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = con;
-                command.CommandText = "select * from Pracownicy where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                command.CommandText = "select * from Pracownicy where Login='" + login_register.Text + "' and Haslo='" + encusr + "'";
                 OleDbDataReader reader = command.ExecuteReader();
                 int count = 0;
                 while (reader.Read())
@@ -71,7 +72,7 @@ namespace Magazyn_Spedycji
                 {
                     OleDbCommand Admin = new OleDbCommand();
                     Admin.Connection = con;
-                    Admin.CommandText = "select ID from Pracownicy where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                    Admin.CommandText = "select ID from Pracownicy where Login='" + login_register.Text + "' and Haslo='" + encusr + "'";
                     Int32 IDK = (Int32)Admin.ExecuteScalar();
                     this.Hide();
                     AdminPanel admin = new AdminPanel();
@@ -89,9 +90,10 @@ namespace Magazyn_Spedycji
             if (UserAccessL.SelectedIndex == 1)
             {
                 con.Open();
+                string encusr = Encyryption.Encrypt(register_password.Text);
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = con;
-                command.CommandText = "select * from Klienci where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                command.CommandText = "select * from Klienci where Login='" + login_register.Text + "' and Haslo='" + encusr+ "'";
                 OleDbDataReader reader = command.ExecuteReader();
                 int count = 0;
                 while (reader.Read())
@@ -102,7 +104,7 @@ namespace Magazyn_Spedycji
                 {
                     OleDbCommand newcarrier = new OleDbCommand();
                     newcarrier.Connection = con;
-                    newcarrier.CommandText = "select ID from Klienci where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                    newcarrier.CommandText = "select ID from Klienci where Login='" + login_register.Text + "' and Haslo='" + encusr + "'";
                     Int32 IDK = (Int32)newcarrier.ExecuteScalar();
                     this.Hide();
                     UserPanel user = new UserPanel();
@@ -121,9 +123,10 @@ namespace Magazyn_Spedycji
             if (UserAccessL.SelectedIndex == 2)
             {
                 con.Open();
+                string encusr = Encyryption.Encrypt(register_password.Text);
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = con;
-                command.CommandText = "select * from Spedytorzy where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                command.CommandText = "select * from Spedytorzy where Login='" + login_register.Text + "' and Haslo='" + encusr + "'";
                 OleDbDataReader reader = command.ExecuteReader();
                 int count = 0;
                 while (reader.Read())
@@ -136,7 +139,7 @@ namespace Magazyn_Spedycji
                 {
                     OleDbCommand newcarrier = new OleDbCommand();
                     newcarrier.Connection = con;
-                    newcarrier.CommandText = "select ID from Spedytorzy where Login='" + login_register.Text + "' and Haslo='" + register_password.Text + "'";
+                    newcarrier.CommandText = "select ID from Spedytorzy where Login='" + login_register.Text + "' and Haslo='" + encusr + "'";
                     Int32 IDK = (Int32)newcarrier.ExecuteScalar();
                     this.Hide();
                     CarrierPanel carrier = new CarrierPanel();
@@ -151,21 +154,15 @@ namespace Magazyn_Spedycji
                 }
                 con.Close();
             }
-
-            
-            
-
         }
         private void SingInSwitch_Click(object sender, EventArgs e)
         {
             showloginelement();
-
             RegisterPanel.Hide();
         }
         private void SingUpSwitch_Click(object sender, EventArgs e)
         {
             hideloginelement();
-         
             RegisterPanel.Show();
             SingUp zarejestruj = new SingUp() {Dock=DockStyle.Fill, TopLevel=false, TopMost=true};
             this.RegisterPanel.Controls.Add(zarejestruj);
@@ -178,14 +175,6 @@ namespace Magazyn_Spedycji
             singUp = null;
             this.Show();*/
         }
-        private void DevButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminPanel adminPanel = new AdminPanel();
-            adminPanel.ShowDialog();
-            adminPanel = null;
-            this.Show();
-        }
         private void PasswordReval_CheckedChanged(object sender, EventArgs e)
         {
             if (PasswordReval.Checked)
@@ -194,15 +183,26 @@ namespace Magazyn_Spedycji
             }
             else register_password.UseSystemPasswordChar = true;
         }
-
         private void login_register_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void UserAccessL_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string encusr = Encyryption.Encrypt(register_password.Text);
+            MessageBox.Show(encusr);
+            Clipboard.SetText(encusr);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string deccusr = Encyryption.Decrypt(register_password.Text);
+            MessageBox.Show(deccusr);
         }
     }
 }

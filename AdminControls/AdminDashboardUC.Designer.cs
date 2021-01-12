@@ -81,6 +81,7 @@
             this.Orders.Text = "Zamówienia";
             this.Orders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Orders.UseVisualStyleBackColor = false;
+            this.Orders.Click += new System.EventHandler(this.Orders_Click);
             // 
             // ProductsControl
             // 
@@ -152,6 +153,7 @@
             this.DataControl.Text = "Moje Dane";
             this.DataControl.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.DataControl.UseVisualStyleBackColor = false;
+            this.DataControl.Click += new System.EventHandler(this.DataControl_Click);
             // 
             // UserControl
             // 

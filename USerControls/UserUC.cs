@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
+using AESCrypto;
 namespace Magazyn_Spedycji.USerControls
 {
  
@@ -27,15 +28,13 @@ namespace Magazyn_Spedycji.USerControls
         string krajKlienta;
         string loginKlienta;
         string hasloKlienta;
-      
         public UserUC()
         {
             InitializeComponent();
         }
         private void CloseProgram()
         {
-            this.Close();
-            
+            this.Close();  
         }
         public void ab(string LoginValue)
         {
@@ -99,7 +98,8 @@ namespace Magazyn_Spedycji.USerControls
             KodBox.Text = kodpocztowyKlienta;
             KrajBox.Text = krajKlienta;
             LoginBox.Text = loginKlienta;
-            hasloBox.Text = hasloKlienta;
+            string decusr = Encyryption.Decrypt(hasloKlienta);
+            hasloBox.Text = decusr;
             label3.Text = "Witaj, " + imieKlienta + "!";
         }
         bool poprawne = false;
@@ -121,12 +121,44 @@ namespace Magazyn_Spedycji.USerControls
             if (poprawne == true)
             {
                 con.Open();
-                OleDbCommand editUser = new OleDbCommand();
-                editUser.Connection = con;
-                string queryEdycja = "update Klienci set Imie='" + ImieBox.Text + "', Nazwisko='" + NazwiskoBox.Text + "', Telefon='" + TelefonBox.Text + "', Adres='" + AdresBox.Text + "', Miasto='" + MiastoBox.Text + "', Wojewodztwo='" + WojewodztwoBox.Text + "', KodPocztowy='" + KodBox.Text + "', Kraj='" + KrajBox.Text + "', Login='" + LoginBox.Text + "', Haslo='" + hasloBox.Text + "' where ID=" + UserValue;
-                editUser.CommandText = queryEdycja;
-                editUser.ExecuteNonQuery();
-                MessageBox.Show("Pomyślnie zmieniono dane!");
+                OleDbCommand check = new OleDbCommand();
+                check.Connection = con;
+                check.CommandText = "SELECT Login FROM Klienci WHERE ID=" + UserValue;
+                OleDbDataReader reader = check.ExecuteReader();
+                int count = 0;
+                while (reader.Read())
+                {
+                    count = count + 1;
+                }
+                string encusr = Encyryption.Encrypt(hasloBox.Text);
+                if (count == 0)
+                {
+                    OleDbCommand editUser = new OleDbCommand();
+                    editUser.Connection = con;
+                    string queryEdycja = "update Klienci set Imie='" + ImieBox.Text + "', Nazwisko='" + NazwiskoBox.Text + "', Telefon='" + TelefonBox.Text + "', Adres='" + AdresBox.Text + "', Miasto='" + MiastoBox.Text + "', Wojewodztwo='" + WojewodztwoBox.Text + "', KodPocztowy='" + KodBox.Text + "', Kraj='" + KrajBox.Text + "', Login='" + LoginBox.Text + "', Haslo='" + encusr + "' where ID=" + UserValue;
+                    editUser.CommandText = queryEdycja;
+                    editUser.ExecuteNonQuery();
+                    MessageBox.Show("Pomyślnie zmieniono dane!");
+                }
+                else if (count == 1)
+                {
+                    OleDbCommand checkr = new OleDbCommand();
+                    checkr.Connection = con;
+                    checkr.CommandText = "SELECT Login FROM Klienci WHERE ID=" + UserValue;
+                    string tmpLogin = checkr.ExecuteScalar().ToString();
+                    if (tmpLogin == LoginBox.Text)
+                    {
+                        OleDbCommand editUser = new OleDbCommand();
+                        editUser.Connection = con;
+                        string queryEdycja = "update Klienci set Imie='" + ImieBox.Text + "', Nazwisko='" + NazwiskoBox.Text + "', Telefon='" + TelefonBox.Text + "', Adres='" + AdresBox.Text + "', Miasto='" + MiastoBox.Text + "', Wojewodztwo='" + WojewodztwoBox.Text + "', KodPocztowy='" + KodBox.Text + "', Kraj='" + KrajBox.Text + "', Login='" + LoginBox.Text + "', Haslo='" + encusr + "' where ID=" + UserValue;
+                        editUser.CommandText = queryEdycja;
+                        editUser.ExecuteNonQuery();
+                        MessageBox.Show("Pomyślnie zmieniono dane!");
+                    }
+                    else MessageBox.Show("Istnieje już Użytkownik o podanym loginie w naszej bazie!");
+                }
+                else MessageBox.Show("Istnieje już Użytkownik o podanym loginie w naszej bazie!"); 
+
                 con.Close();
                 getUserData();
             }
@@ -135,12 +167,10 @@ namespace Magazyn_Spedycji.USerControls
 
             }   
         }
-
         private void UserUC_Load(object sender, EventArgs e)
         {
             getUserData();
         }
-
         private void Delete_Account_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Czy napewno chcesz usunąć wszystkie dane z naszej aplikacji? !UWAGA! Usunie to wszystkie twoje dane oraz zamówienia, oraz odbierze cie mozliwość ponownego zalogowania do aplikacji!", "Potwierdzenie", MessageBoxButtons.YesNo);
@@ -182,6 +212,17 @@ namespace Magazyn_Spedycji.USerControls
             else if (result == DialogResult.No)
             {
              
+            }
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                hasloBox.UseSystemPasswordChar = false;
+            }
+            else if (checkBox1.Checked == false)
+            {
+                hasloBox.UseSystemPasswordChar = true;
             }
         }
     }

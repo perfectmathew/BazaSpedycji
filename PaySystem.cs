@@ -21,7 +21,6 @@ namespace Magazyn_Spedycji
         public PaySystem()
         {
             InitializeComponent();
-
         }
         public void UserCondiction(string LoginValue)
         {

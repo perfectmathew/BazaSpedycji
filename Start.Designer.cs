@@ -34,18 +34,19 @@
             this.UserAccessL = new System.Windows.Forms.ComboBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.loginString = new System.Windows.Forms.Label();
-            this.DevButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PasswordReval = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SingInSwitch = new System.Windows.Forms.Button();
+            this.SingUpSwitch = new System.Windows.Forms.Button();
             this.magazynSpedycjiDataSet1 = new Magazyn_Spedycji.MagazynSpedycjiDataSet();
             this.RegisterPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.SingInSwitch = new System.Windows.Forms.Button();
-            this.SingUpSwitch = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magazynSpedycjiDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -109,16 +110,6 @@
             this.loginString.Text = "Logowanie";
             this.loginString.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // DevButton
-            // 
-            this.DevButton.Location = new System.Drawing.Point(24, 12);
-            this.DevButton.Name = "DevButton";
-            this.DevButton.Size = new System.Drawing.Size(75, 23);
-            this.DevButton.TabIndex = 9;
-            this.DevButton.Text = "Dev";
-            this.DevButton.UseVisualStyleBackColor = true;
-            this.DevButton.Click += new System.EventHandler(this.DevButton_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -159,42 +150,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.SingInSwitch);
             this.panel1.Controls.Add(this.SingUpSwitch);
             this.panel1.Location = new System.Drawing.Point(-1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 510);
             this.panel1.TabIndex = 14;
-            // 
-            // magazynSpedycjiDataSet1
-            // 
-            this.magazynSpedycjiDataSet1.DataSetName = "MagazynSpedycjiDataSet";
-            this.magazynSpedycjiDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // RegisterPanel
-            // 
-            this.RegisterPanel.Location = new System.Drawing.Point(372, 301);
-            this.RegisterPanel.Name = "RegisterPanel";
-            this.RegisterPanel.Size = new System.Drawing.Size(447, 201);
-            this.RegisterPanel.TabIndex = 15;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Desktop;
-            this.panel2.Location = new System.Drawing.Point(197, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(777, 18);
-            this.panel2.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Magazyn_Spedycji.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(324, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(495, 283);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // SingInSwitch
             // 
@@ -232,6 +195,56 @@
             this.SingUpSwitch.UseVisualStyleBackColor = false;
             this.SingUpSwitch.Click += new System.EventHandler(this.SingUpSwitch_Click);
             // 
+            // magazynSpedycjiDataSet1
+            // 
+            this.magazynSpedycjiDataSet1.DataSetName = "MagazynSpedycjiDataSet";
+            this.magazynSpedycjiDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // RegisterPanel
+            // 
+            this.RegisterPanel.Location = new System.Drawing.Point(372, 301);
+            this.RegisterPanel.Name = "RegisterPanel";
+            this.RegisterPanel.Size = new System.Drawing.Size(447, 201);
+            this.RegisterPanel.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel2.Location = new System.Drawing.Point(197, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(777, 18);
+            this.panel2.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Magazyn_Spedycji.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(324, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(495, 283);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(63, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "encode";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(63, 124);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Decrypt";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MagazynSpedycji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,7 +256,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DevButton);
             this.Controls.Add(this.loginString);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LoginButton);
@@ -273,7 +285,6 @@
         private System.Windows.Forms.Label loginString;
         private System.Windows.Forms.Button SingInSwitch;
         private System.Windows.Forms.Button SingUpSwitch;
-        private System.Windows.Forms.Button DevButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -283,6 +294,8 @@
         private MagazynSpedycjiDataSet magazynSpedycjiDataSet1;
         private System.Windows.Forms.Panel RegisterPanel;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

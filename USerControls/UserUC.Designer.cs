@@ -57,6 +57,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.changeUserData = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -231,6 +232,7 @@
             this.hasloBox.Name = "hasloBox";
             this.hasloBox.Size = new System.Drawing.Size(100, 20);
             this.hasloBox.TabIndex = 45;
+            this.hasloBox.UseSystemPasswordChar = true;
             // 
             // LoginBox
             // 
@@ -334,12 +336,23 @@
             this.label15.TabIndex = 58;
             this.label15.Text = "*Ta opcja usunie twoje wszystkie dane z naszej aplikacji!";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(375, 370);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 59;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // UserUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label12);
@@ -409,5 +422,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button changeUserData;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

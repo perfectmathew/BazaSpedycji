@@ -70,12 +70,19 @@
     <Compile Include="AdminControls\AdminDashboardUC.Designer.cs">
       <DependentUpon>AdminDashboardUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminControls\AdminShopUC.cs">
+    <Compile Include="AdminControls\AdminDataUC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminControls\AdminShopUC.Designer.cs">
-      <DependentUpon>AdminShopUC.cs</DependentUpon>
+    <Compile Include="AdminControls\AdminDataUC.Designer.cs">
+      <DependentUpon>AdminDataUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminControls\AdminOrdersUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminControls\AdminOrdersUC.Designer.cs">
+      <DependentUpon>AdminOrdersUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\Encyryption.cs" />
     <Compile Include="AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,8 +198,11 @@
     <EmbeddedResource Include="AdminControls\AdminDashboardUC.resx">
       <DependentUpon>AdminDashboardUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminControls\AdminShopUC.resx">
-      <DependentUpon>AdminShopUC.cs</DependentUpon>
+    <EmbeddedResource Include="AdminControls\AdminDataUC.resx">
+      <DependentUpon>AdminDataUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminControls\AdminOrdersUC.resx">
+      <DependentUpon>AdminOrdersUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel.pl.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>

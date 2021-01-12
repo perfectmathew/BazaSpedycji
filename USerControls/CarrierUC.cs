@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using AESCrypto;
 namespace Magazyn_Spedycji.USerControls
 {
   
@@ -22,8 +23,7 @@ namespace Magazyn_Spedycji.USerControls
         string EmailSpedytora;
         string TelefonSpedytora;
         string LoginSpedytora;
-        string HasloSpedytora;
-     
+        string HasloSpedytora; 
         public void getData()
         {
             con.Open();
@@ -57,13 +57,12 @@ namespace Magazyn_Spedycji.USerControls
             EmailText.Text = EmailSpedytora;
             PhoneText.Text = TelefonSpedytora;
             LoginText.Text = LoginSpedytora;
-            PassText.Text = HasloSpedytora;
+            string decusr = Encyryption.Decrypt(HasloSpedytora);
+            PassText.Text = decusr;
         }
-
         public CarrierUC()
         {
             InitializeComponent();
-         
         }
         public void next(string LoginValue)
         {
@@ -79,22 +78,52 @@ namespace Magazyn_Spedycji.USerControls
             }else
             {
                 con.Open();
-                OleDbCommand updater = new OleDbCommand();
-                updater.Connection = con;
-                string query = "UPDATE Spedytorzy SET Imie='"+NameText.Text+"', Nazwisko='"+SurrnameText.Text+"', Email='"+EmailText.Text+"', Telefon='"+PhoneText.Text+"', Login='"+LoginText.Text+"', Haslo='"+PassText.Text+"' WHERE ID="+CarrierValue;
-                updater.CommandText = query;
-                updater.ExecuteNonQuery();
+                OleDbCommand check = new OleDbCommand();
+                check.Connection = con;
+                check.CommandText = "SELECT Login FROM Spedytorzy WHERE ID=" + CarrierValue;
+                OleDbDataReader reader = check.ExecuteReader();
+                int count = 0;
+                while (reader.Read())
+                {
+                    count = count + 1;
+                }
+                string encusr = Encyryption.Encrypt(PassText.Text);
+                if (count == 0)
+                {
+                    OleDbCommand updater = new OleDbCommand();
+                    updater.Connection = con;
+                    string query = "UPDATE Spedytorzy SET Imie='" + NameText.Text + "', Nazwisko='" + SurrnameText.Text + "', Email='" + EmailText.Text + "', Telefon='" + PhoneText.Text + "', Login='" + LoginText.Text + "', Haslo='" + encusr + "' WHERE ID=" + CarrierValue;
+                    updater.CommandText = query;
+                    updater.ExecuteNonQuery();
+                    MessageBox.Show("Pomyślnie zaktualizowano dane!");
+                }
+                else if (count == 1)
+                {
+                    OleDbCommand checkr = new OleDbCommand();
+                    checkr.Connection = con;
+                    checkr.CommandText = "SELECT Login FROM Spedytorzy WHERE ID=" + CarrierValue;
+                    string tmpLogin = checkr.ExecuteScalar().ToString();
+                    if (tmpLogin == LoginText.Text)
+                    {
+                        OleDbCommand editUser = new OleDbCommand();
+                        editUser.Connection = con;
+                        string query = "UPDATE Spedytorzy SET Imie='" + NameText.Text + "', Nazwisko='" + SurrnameText.Text + "', Email='" + EmailText.Text + "', Telefon='" + PhoneText.Text + "', Login='" + LoginText.Text + "', Haslo='" + encusr + "' WHERE ID=" + CarrierValue;
+                        editUser.CommandText = query;
+                        editUser.ExecuteNonQuery();
+                        MessageBox.Show("Pomyślnie zmieniono dane!");
+                    }
+                    else MessageBox.Show("Istnieje już Użytkownik o podanym loginie w naszej bazie!");
+                }
+                else MessageBox.Show("Istnieje już Użytkownik o podanym loginie w naszej bazie!");
                 con.Close();
-                MessageBox.Show("Pomyślnie zaktualizowano dane!");
+         
                 getData();
             }
         }
-
         private void CarrierUC_Load(object sender, EventArgs e)
         {
             getData();
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == false) PassText.UseSystemPasswordChar = true;

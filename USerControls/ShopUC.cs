@@ -146,7 +146,6 @@ namespace Magazyn_Spedycji.USerControls
             }
             con.Close();
         }
-
         private void backtoshop_Click(object sender, EventArgs e)
         {
             CreateOrder.Hide();
@@ -155,9 +154,9 @@ namespace Magazyn_Spedycji.USerControls
             SearchButton.Show();
             backtoshop.Hide();
         }
-
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            backtoshop.Show();
             // SELECT Produkty.* FROM Produkty WHERE NazwaProduktu LIKE "*Piwo*";
             con.Open();
             OleDbCommand search = new OleDbCommand();
@@ -170,7 +169,6 @@ namespace Magazyn_Spedycji.USerControls
             dataGridView1.DataSource = Searcher;
             con.Close();
         }
-
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             if (searchBar.Text == "")

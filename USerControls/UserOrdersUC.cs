@@ -74,7 +74,6 @@ namespace Magazyn_Spedycji.USerControls
                 con.Close();
             }
         }
-
         private void backButton_Click(object sender, EventArgs e)
         {
             backButton.Hide();

@@ -79,7 +79,6 @@
             this.Pass.Size = new System.Drawing.Size(100, 20);
             this.Pass.TabIndex = 4;
             this.Pass.UseSystemPasswordChar = true;
-            this.Pass.TextChanged += new System.EventHandler(this.Pass_TextChanged);
             // 
             // SingUpButton
             // 

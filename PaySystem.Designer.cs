@@ -153,7 +153,9 @@
             this.Controls.Add(this.PaymentsMethod);
             this.Controls.Add(this.PayButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "PaySystem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment Gateway";
             this.Load += new System.EventHandler(this.PaySystem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
