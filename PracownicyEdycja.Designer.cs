@@ -55,6 +55,7 @@
             this.promote = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.AddWorker = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pracownicy)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,6 +159,7 @@
             this.haslo_prac.Name = "haslo_prac";
             this.haslo_prac.Size = new System.Drawing.Size(98, 20);
             this.haslo_prac.TabIndex = 15;
+            this.haslo_prac.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -305,12 +307,23 @@
             this.AddWorker.UseVisualStyleBackColor = false;
             this.AddWorker.Click += new System.EventHandler(this.AddWorker_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(149, 276);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // PracownicyEdycja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(892, 510);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.AddWorker);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);
@@ -342,7 +355,7 @@
             this.MaximizeBox = false;
             this.Name = "PracownicyEdycja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pracownicy";
+            this.Text = "Zarządzanie pracownikami";
             this.Load += new System.EventHandler(this.PracownicyEdycja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pracownicy)).EndInit();
             this.ResumeLayout(false);
@@ -379,5 +392,6 @@
         private System.Windows.Forms.Button promote;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button AddWorker;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

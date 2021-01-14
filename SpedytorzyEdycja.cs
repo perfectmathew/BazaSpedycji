@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
-
+using AESCrypto;
 namespace Magazyn_Spedycji
 {
     public partial class SpedytorzyEdycja : Form
@@ -18,7 +18,7 @@ namespace Magazyn_Spedycji
         bool poprawne = false;
         int permLVL = 1;
         string AdminValue;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         public SpedytorzyEdycja()
         {
             InitializeComponent();
@@ -59,9 +59,9 @@ namespace Magazyn_Spedycji
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                kolumna = e.RowIndex;
-                if (kolumna < 0 ) MessageBox.Show("Wybierz produkt!");
-                else
+            kolumna = e.RowIndex;
+            if (kolumna < 0 ) MessageBox.Show("Wybierz użytkownika!");
+            else
                 {
                     DataGridViewRow kol = dataGridView1.Rows[kolumna];
                     login_spedy.Text = kol.Cells[0].Value.ToString();
@@ -70,7 +70,9 @@ namespace Magazyn_Spedycji
                     nazw_spedy.Text = kol.Cells[3].Value.ToString();
                     email_spedy.Text = kol.Cells[4].Value.ToString();
                     tele_spedy.Text = kol.Cells[5].Value.ToString();
-                    haslo_spedy.Text = kol.Cells[6].Value.ToString();
+                    string tmp = kol.Cells[6].Value.ToString();
+                    string decusr = Encyryption.Decrypt(tmp);
+                    haslo_spedy.Text = decusr;  
                 } 
         }
         private void usun_spedy_Click(object sender, EventArgs e)
@@ -127,13 +129,14 @@ namespace Magazyn_Spedycji
             sprawdz_poprawnosc();
             if (poprawne == true)
             {
+                string decpass = Encyryption.Encrypt(haslo_spedy.Text);
                 con.Open();
                 OleDbCommand laczenie = new OleDbCommand();
                 laczenie.Connection = con;
-                string queryEdycja = "update Spedytorzy set Firma='" + firma_spedy.Text + "', Imie='" + imie_spedy.Text + "', Nazwisko='" + nazw_spedy.Text + "', Email='" + email_spedy.Text + "', Telefon='" + tele_spedy.Text + "', Login='" + login_spedy.Text + "', Haslo='" + haslo_spedy.Text + "' where Login='" + login_spedy.Text+"'";
+                string queryEdycja = "update Spedytorzy set Firma='" + firma_spedy.Text + "', Imie='" + imie_spedy.Text + "', Nazwisko='" + nazw_spedy.Text + "', Email='" + email_spedy.Text + "', Telefon='" + tele_spedy.Text + "', Login='" + login_spedy.Text + "', Haslo='" + decpass + "' where Login='" + login_spedy.Text+"'";
                 laczenie.CommandText = queryEdycja;
                 laczenie.ExecuteNonQuery();
-                MessageBox.Show("Pomyślnie zaktualizowano produkt");
+                MessageBox.Show("Pomyślnie zaktualizowano użytkownika!");
                 con.Close();
             }
             odswiez_gridview();

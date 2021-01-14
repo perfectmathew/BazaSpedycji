@@ -86,8 +86,8 @@
             // 
             this.StatusOrderCombo.FormattingEnabled = true;
             this.StatusOrderCombo.Items.AddRange(new object[] {
-            "W drodze",
-            "Zamknięte"});
+            "Niedostarczone",
+            "Dostarczone"});
             this.StatusOrderCombo.Location = new System.Drawing.Point(27, 235);
             this.StatusOrderCombo.Name = "StatusOrderCombo";
             this.StatusOrderCombo.Size = new System.Drawing.Size(141, 21);

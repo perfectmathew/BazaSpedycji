@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Data.OleDb;
-
+using AESCrypto;
 namespace Magazyn_Spedycji
 {
     public partial class DodawanieSpedytora : Form
     {
 
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         bool poprawne=false;
         public DodawanieSpedytora()
         {
@@ -63,9 +63,10 @@ namespace Magazyn_Spedycji
                 }
                 else
                 {
+                    string encusr = Encyryption.Encrypt(haslo_spedy.Text);
                     OleDbCommand laczenie = new OleDbCommand();
                     laczenie.Connection = con;
-                    string queryDodaj = "insert into Spedytorzy(Firma, Imie, Nazwisko, Email, Telefon, Login, Haslo) values('" + firma_spedy.Text + "','" + imie_spedy.Text + "','" + nazwi_spedy.Text + "','" + email_spedy.Text + "','" + tele_spedy.Text + "','" + login_spedy.Text + "','" + haslo_spedy.Text + "')";
+                    string queryDodaj = "insert into Spedytorzy(Firma, Imie, Nazwisko, Email, Telefon, Login, Haslo) values('" + firma_spedy.Text + "','" + imie_spedy.Text + "','" + nazwi_spedy.Text + "','" + email_spedy.Text + "','" + tele_spedy.Text + "','" + login_spedy.Text + "','" + encusr + "')";
                     laczenie.CommandText = queryDodaj;
                     laczenie.ExecuteNonQuery();
                     MessageBox.Show("Dodano nowego spedytora!");

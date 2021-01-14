@@ -14,9 +14,9 @@ namespace Magazyn_Spedycji.USerControls
 
     public partial class CarrierOrdersUC : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         string CarrierValue;
-        int OrderStausValue=1;
+
         public CarrierOrdersUC()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace Magazyn_Spedycji.USerControls
             con.Open();
             OleDbCommand createSpedytorzy = new OleDbCommand();
             createSpedytorzy.Connection = con;
-            string querySpedytorzy = "SELECT Zamowienia.IdZamowienia, StanZamowien.Nazwa AS [Stan Zamowienia], Klienci.Imie, Klienci.Nazwisko, Klienci.Telefon, Klienci.Adres, Klienci.Miasto, Klienci.Wojewodztwo, Klienci.KodPocztowy FROM StanZamowien INNER JOIN(Klienci INNER JOIN Zamowienia ON Klienci.ID = Zamowienia.IdKlienta) ON StanZamowien.IdStanu = Zamowienia.IdStanu WHERE Zamowienia.IdSpedytora=" + CarrierValue + " AND Zamowienia.IdStanu NOT IN(3)";
+            string querySpedytorzy = "SELECT Zamowienia.IdZamowienia, StanZamowien.Nazwa AS [Status], Zamowienia.DataWyslania ,Klienci.Imie, Klienci.Nazwisko, Klienci.Telefon, Klienci.Adres, Klienci.Miasto, Klienci.Wojewodztwo, Klienci.KodPocztowy, Klienci.Kraj FROM Klienci INNER JOIN(StanZamowien INNER JOIN (Spedytorzy INNER JOIN Zamowienia ON Spedytorzy.ID = Zamowienia.IdSpedytora) ON StanZamowien.IdStanu = Zamowienia.IdStanu) ON Klienci.ID = Zamowienia.IdKlienta WHERE Zamowienia.IdSpedytora=" + CarrierValue + " AND Zamowienia.IdStanu=3 AND Zamowienia.Dostarczone=0";
             createSpedytorzy.CommandText = querySpedytorzy;
             OleDbDataAdapter spedytorzy = new OleDbDataAdapter(createSpedytorzy);
             DataTable SpedytorzyTable = new DataTable();
@@ -44,7 +44,6 @@ namespace Magazyn_Spedycji.USerControls
             if( IDZamField.Text==""|| StatusOrderCombo.SelectedIndex == -1)
             {
                 MessageBox.Show("Brak kompletu informacji!");
-
             }
             else
             {
@@ -65,7 +64,7 @@ namespace Magazyn_Spedycji.USerControls
                     {
                         OleDbCommand UpdateStatus0 = new OleDbCommand();
                         UpdateStatus0.Connection = con;
-                        string query = "UPDATE Zamowienia SET IdStanu=" + OrderStausValue + ", DataWyslania='"+CurentDate+"' WHERE IdZamowienia=" + IDZamField.Text;
+                        string query = "UPDATE Zamowienia SET Dostarczone=0, DataWyslania='"+CurentDate+"' WHERE IdZamowienia=" + IDZamField.Text;
                         UpdateStatus0.CommandText = query;
                         UpdateStatus0.ExecuteNonQuery();
                         MessageBox.Show("Pomyślnie zaktualizowano status zamówienia!");
@@ -74,7 +73,7 @@ namespace Magazyn_Spedycji.USerControls
                     {
                         OleDbCommand UpdateStatus0 = new OleDbCommand();
                         UpdateStatus0.Connection = con;
-                        string query = "UPDATE Zamowienia SET IdStanu=" + OrderStausValue + ", DataDostarczenia='" + CurentDate + "' WHERE IdZamowienia=" + IDZamField.Text;
+                        string query = "UPDATE Zamowienia SET IdStanu=5, Dostarczone=1, DataDostarczenia='" + CurentDate + "' WHERE IdZamowienia=" + IDZamField.Text;
                         UpdateStatus0.CommandText = query;
                         UpdateStatus0.ExecuteNonQuery();
                         MessageBox.Show("Pomyślnie zaktualizowano status zamówienia!");
@@ -88,22 +87,12 @@ namespace Magazyn_Spedycji.USerControls
                 }
             }
         }
-
         private void CarrierOrdersUC_Load(object sender, EventArgs e)
         {
             CreateOrders();
         }
-
         private void StatusOrderCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (StatusOrderCombo.SelectedIndex == 0)
-            {
-                OrderStausValue = 2;
-            }
-            if (StatusOrderCombo.SelectedIndex == 1)
-            {
-                OrderStausValue = 3;
-            }
         }
     }
 }

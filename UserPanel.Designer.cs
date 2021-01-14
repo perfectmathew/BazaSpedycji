@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPanel));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.UserData = new System.Windows.Forms.Panel();
             this.ShopPanel = new System.Windows.Forms.Panel();
             this.OrdersPanel = new System.Windows.Forms.Panel();
@@ -38,7 +39,6 @@
             this.MyDataOpen = new System.Windows.Forms.Button();
             this.ShopOpen = new System.Windows.Forms.Button();
             this.ZamOpenButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.UserData.SuspendLayout();
             this.ShopPanel.SuspendLayout();
@@ -54,6 +54,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(776, 35);
             this.panel2.TabIndex = 53;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Magazyn_Spedycji.Properties.Resources.logout;
+            this.button1.Location = new System.Drawing.Point(731, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 35);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserData
             // 
@@ -151,18 +163,6 @@
             this.ZamOpenButton.UseVisualStyleBackColor = true;
             this.ZamOpenButton.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Magazyn_Spedycji.Properties.Resources.logout;
-            this.button1.Location = new System.Drawing.Point(731, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 35);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // UserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +173,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "UserPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Secret Shipping | UserPanel";

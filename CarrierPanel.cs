@@ -14,7 +14,7 @@ namespace Magazyn_Spedycji
     {
         string CarrierValue;
         string imieSpedytora;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         public CarrierPanel()
         {
             InitializeComponent();

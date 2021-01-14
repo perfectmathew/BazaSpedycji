@@ -39,14 +39,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.PasswordReval = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Help = new System.Windows.Forms.Button();
+            this.Info = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SingInSwitch = new System.Windows.Forms.Button();
             this.SingUpSwitch = new System.Windows.Forms.Button();
             this.magazynSpedycjiDataSet1 = new Magazyn_Spedycji.MagazynSpedycjiDataSet();
             this.RegisterPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magazynSpedycjiDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +69,6 @@
             this.login_register.Name = "login_register";
             this.login_register.Size = new System.Drawing.Size(123, 20);
             this.login_register.TabIndex = 2;
-            this.login_register.TextChanged += new System.EventHandler(this.login_register_TextChanged);
             // 
             // UserAccessL
             // 
@@ -80,7 +81,6 @@
             this.UserAccessL.Name = "UserAccessL";
             this.UserAccessL.Size = new System.Drawing.Size(123, 21);
             this.UserAccessL.TabIndex = 3;
-            this.UserAccessL.SelectedIndexChanged += new System.EventHandler(this.UserAccessL_SelectedIndexChanged);
             // 
             // LoginButton
             // 
@@ -150,6 +150,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel1.Controls.Add(this.Help);
+            this.panel1.Controls.Add(this.Info);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.SingInSwitch);
@@ -158,6 +160,53 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 510);
             this.panel1.TabIndex = 14;
+            // 
+            // Help
+            // 
+            this.Help.BackColor = System.Drawing.SystemColors.Desktop;
+            this.Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Help.Font = new System.Drawing.Font("Nexa Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Help.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Help.Location = new System.Drawing.Point(44, 1);
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(37, 36);
+            this.Help.TabIndex = 11;
+            this.Help.Text = "?";
+            this.Help.UseVisualStyleBackColor = false;
+            this.Help.Click += new System.EventHandler(this.Help_Click);
+            // 
+            // Info
+            // 
+            this.Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Info.Font = new System.Drawing.Font("Nexa Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Info.Location = new System.Drawing.Point(3, 1);
+            this.Info.Name = "Info";
+            this.Info.Size = new System.Drawing.Size(35, 36);
+            this.Info.TabIndex = 11;
+            this.Info.Text = "i";
+            this.Info.UseVisualStyleBackColor = true;
+            this.Info.Click += new System.EventHandler(this.Info_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(13, 321);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Decrypt";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "encode";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // SingInSwitch
             // 
@@ -225,26 +274,6 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(63, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "encode";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(63, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Decrypt";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // MagazynSpedycji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +294,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MagazynSpedycji";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Secret Shipping | Main Menu";
@@ -296,6 +326,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Help;
+        private System.Windows.Forms.Button Info;
     }
 }
 

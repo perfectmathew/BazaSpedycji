@@ -16,7 +16,7 @@ namespace Magazyn_Spedycji
     public partial class SingUp : Form
     {
         bool poprawnoc_hasla = false;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         public SingUp()
         {
             InitializeComponent();

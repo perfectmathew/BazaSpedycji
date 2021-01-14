@@ -15,7 +15,7 @@ namespace Magazyn_Spedycji
   
     public partial class MagazynSpedycji : Form
     {      
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         private void hideloginelement()
         {
      
@@ -167,13 +167,6 @@ namespace Magazyn_Spedycji
             SingUp zarejestruj = new SingUp() {Dock=DockStyle.Fill, TopLevel=false, TopMost=true};
             this.RegisterPanel.Controls.Add(zarejestruj);
             zarejestruj.Show();
-            /*
-            this.Hide();
-
-            SingUp singUp = new SingUp();
-            singUp.ShowDialog();
-            singUp = null;
-            this.Show();*/
         }
         private void PasswordReval_CheckedChanged(object sender, EventArgs e)
         {
@@ -183,26 +176,27 @@ namespace Magazyn_Spedycji
             }
             else register_password.UseSystemPasswordChar = true;
         }
-        private void login_register_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void UserAccessL_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             string encusr = Encyryption.Encrypt(register_password.Text);
             MessageBox.Show(encusr);
             Clipboard.SetText(encusr);
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             string deccusr = Encyryption.Decrypt(register_password.Text);
             MessageBox.Show(deccusr);
         }
+        private void Info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("| Aplikacja stworzona dla Secret Shopping. |\n| Autorzy: Mateusz Wróblewski, Kacper Wojnarowski |");
+        }
+        private void Help_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Masz pytania? Pisz do nas śmiało na kontakt@secretshopping.app!");
+        }
+    
+
+
     }
 }

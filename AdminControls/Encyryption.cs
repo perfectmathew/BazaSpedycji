@@ -9,8 +9,7 @@ namespace AESCrypto
     class Encyryption
     {
         public static string IV = "qo1lc3sjd8zpt9cx";
-        public static string Key = "ow7dxys8glfor9tnc2ansdfoltekfjcv";
-
+        public static string Key = "ow7dxys8glfor9tnc2ansdfoltekfjcv"; 
         public static string Encrypt(string decrypted)
         {
             byte[] texbyte = ASCIIEncoding.ASCII.GetBytes(decrypted);
@@ -22,7 +21,6 @@ namespace AESCrypto
             encoder.Padding = PaddingMode.PKCS7;
             encoder.Mode = CipherMode.CBC;
             ICryptoTransform icrypt = encoder.CreateEncryptor(encoder.Key, encoder.IV);
-
             byte[] enc = icrypt.TransformFinalBlock(texbyte, 0, texbyte.Length);
             icrypt.Dispose();
             return Convert.ToBase64String(enc);

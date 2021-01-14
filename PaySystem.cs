@@ -14,7 +14,7 @@ namespace Magazyn_Spedycji
 
     public partial class PaySystem : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         string UserValue;
         string orderValue;
         int iddelivery = 0;
@@ -82,7 +82,6 @@ namespace Magazyn_Spedycji
         }
         private void PayButton_Click(object sender, EventArgs e)
         {
-          
             if(DeliveryOption.SelectedIndex==-1 ||  PaymentsMethod.SelectedIndex == -1)
             {
                 MessageBox.Show("Wybierz sposób dostawy i metodę płatności!");

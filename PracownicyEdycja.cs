@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
-
+using AESCrypto;
 namespace Magazyn_Spedycji
 {
     public partial class PracownicyEdycja : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         int kolumna = 0;
         bool poprawne = false;
         public PracownicyEdycja()
@@ -72,7 +72,7 @@ namespace Magazyn_Spedycji
         private void Pracownicy_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             kolumna = e.RowIndex;
-            if (kolumna < 0 ) MessageBox.Show("Wybierz produkt!");
+            if (kolumna < 0 ) MessageBox.Show("Wybierz użytkownika!");
             else
             {
                 DataGridViewRow kol = Pracownicy.Rows[kolumna];
@@ -86,7 +86,9 @@ namespace Magazyn_Spedycji
                 woje_prac.Text = kol.Cells[7].Value.ToString();
                 kodp_prac.Text = kol.Cells[8].Value.ToString();
                 login_prac.Text = kol.Cells[9].Value.ToString();
-                haslo_prac.Text = kol.Cells[10].Value.ToString();
+                string tmp = kol.Cells[10].Value.ToString();
+                string decusr = Encyryption.Decrypt(tmp);
+                haslo_prac.Text =decusr;
             }
         }
         private void edytuj_prac_Click(object sender, EventArgs e)
@@ -94,10 +96,11 @@ namespace Magazyn_Spedycji
             sprawdz_poprawnosc();
             if (poprawne == true)
             {
+                string decpass = Encyryption.Encrypt(haslo_prac.Text);
                 con.Open();
                 OleDbCommand laczenie = new OleDbCommand();
                 laczenie.Connection = con;
-                string queryEdycja = "UPDATE Pracownicy SET Imie='" + imie_prac.Text + "', Nazwisko='" + nazw_prac.Text + "', Email='" + email_prac.Text + "', Telefon='" + tele_prac.Text + "', Adres='" + adres_prac.Text + "', Miasto='" + miasto_prac.Text + "', Wojewodztwo='" + woje_prac.Text + "', KodPocztowy='" + kodp_prac.Text + "', Login='"+login_prac.Text+"', Haslo='" + haslo_prac.Text + "', Rola="+1+" WHERE Login='"+login_prac.Text+"'";
+                string queryEdycja = "UPDATE Pracownicy SET Imie='" + imie_prac.Text + "', Nazwisko='" + nazw_prac.Text + "', Email='" + email_prac.Text + "', Telefon='" + tele_prac.Text + "', Adres='" + adres_prac.Text + "', Miasto='" + miasto_prac.Text + "', Wojewodztwo='" + woje_prac.Text + "', KodPocztowy='" + kodp_prac.Text + "', Login='"+login_prac.Text+"', Haslo='" + decpass + "', Rola="+1+" WHERE Login='"+login_prac.Text+"'";
                 laczenie.CommandText = queryEdycja;
                 laczenie.ExecuteNonQuery();
                 con.Close();
@@ -158,6 +161,16 @@ namespace Magazyn_Spedycji
             pracownikdodaj.ShowDialog();
             pracownikdodaj = null;
             this.Show();
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                haslo_prac.UseSystemPasswordChar = false;
+            } else if (checkBox1.Checked == false)
+            {
+                haslo_prac.UseSystemPasswordChar = true;
+            }
         }
     }
 }

@@ -32,13 +32,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DeleteOrder = new System.Windows.Forms.Button();
             this.editOrder = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.actionbox = new System.Windows.Forms.ComboBox();
             this.idorder = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.showmore = new System.Windows.Forms.Button();
+            this.backtoorders = new System.Windows.Forms.Button();
+            this.orderhistory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +51,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(478, 481);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -89,18 +93,17 @@
             this.editOrder.UseVisualStyleBackColor = false;
             this.editOrder.Click += new System.EventHandler(this.editOrder_Click);
             // 
-            // comboBox1
+            // actionbox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Opłacone",
+            this.actionbox.FormattingEnabled = true;
+            this.actionbox.Items.AddRange(new object[] {
             "W trakcie realizacji",
             "Wysłane",
             "Zakończone"});
-            this.comboBox1.Location = new System.Drawing.Point(62, 119);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 21);
-            this.comboBox1.TabIndex = 3;
+            this.actionbox.Location = new System.Drawing.Point(62, 119);
+            this.actionbox.Name = "actionbox";
+            this.actionbox.Size = new System.Drawing.Size(210, 21);
+            this.actionbox.TabIndex = 3;
             // 
             // idorder
             // 
@@ -160,6 +163,36 @@
             this.showmore.UseVisualStyleBackColor = false;
             this.showmore.Click += new System.EventHandler(this.showmore_Click);
             // 
+            // backtoorders
+            // 
+            this.backtoorders.BackColor = System.Drawing.SystemColors.Desktop;
+            this.backtoorders.FlatAppearance.BorderSize = 0;
+            this.backtoorders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backtoorders.Font = new System.Drawing.Font("Nexa Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backtoorders.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.backtoorders.Location = new System.Drawing.Point(62, 348);
+            this.backtoorders.Name = "backtoorders";
+            this.backtoorders.Size = new System.Drawing.Size(210, 41);
+            this.backtoorders.TabIndex = 2;
+            this.backtoorders.Text = "Powrót";
+            this.backtoorders.UseVisualStyleBackColor = false;
+            this.backtoorders.Click += new System.EventHandler(this.backtoorders_Click);
+            // 
+            // orderhistory
+            // 
+            this.orderhistory.BackColor = System.Drawing.SystemColors.Desktop;
+            this.orderhistory.FlatAppearance.BorderSize = 0;
+            this.orderhistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderhistory.Font = new System.Drawing.Font("Nexa Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderhistory.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.orderhistory.Location = new System.Drawing.Point(62, 454);
+            this.orderhistory.Name = "orderhistory";
+            this.orderhistory.Size = new System.Drawing.Size(210, 39);
+            this.orderhistory.TabIndex = 2;
+            this.orderhistory.Text = "Archiwum zamówień";
+            this.orderhistory.UseVisualStyleBackColor = false;
+            this.orderhistory.Click += new System.EventHandler(this.orderhistory_Click);
+            // 
             // AdminOrdersUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,9 +204,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.idorder);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.actionbox);
             this.Controls.Add(this.editOrder);
+            this.Controls.Add(this.backtoorders);
             this.Controls.Add(this.showmore);
+            this.Controls.Add(this.orderhistory);
             this.Controls.Add(this.DeleteOrder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -195,12 +230,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button DeleteOrder;
         private System.Windows.Forms.Button editOrder;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox actionbox;
         private System.Windows.Forms.TextBox idorder;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button showmore;
+        private System.Windows.Forms.Button backtoorders;
+        private System.Windows.Forms.Button orderhistory;
     }
 }

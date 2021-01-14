@@ -15,7 +15,7 @@ namespace Magazyn_Spedycji.AdminControls
     public partial class edit_data : Form
     {
         bool poprawne = false;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\Perfectamthew\Documents\GitHub\BazaSpedycji\Database\MagazynSpedycji.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Database\MagazynSpedycji.accdb");
         string AdminValue;
         string imieKlienta;
         string nazwiskoKlienta;
