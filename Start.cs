@@ -184,6 +184,6 @@ namespace Magazyn_Spedycji
         {
             MessageBox.Show("Masz pytania? Pisz do nas śmiało na kontakt@secretshopping.app!");
         }
-    
+
     }
 }

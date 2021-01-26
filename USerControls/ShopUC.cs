@@ -96,7 +96,7 @@ namespace Magazyn_Spedycji.USerControls
                         Int32 IIDProduktu = (Int32)gedCode.ExecuteScalar();
                         OleDbCommand cmd = new OleDbCommand();
                         cmd.Connection = con;
-                        cmd.CommandText = "INSERT INTO SzczegolyZamowienia(IdZamowienia,IdProduktu,Ilosc,IdStanu,IDKlienta) values('" + CurentOrder + "','" + IIDProduktu + "','" + Amount.Text + "','" + 0 + "','" + UserValue + "') ";
+                        cmd.CommandText = "INSERT INTO SzczegolyZamowienia(IdZamowienia,IdProduktu,Ilosc,IDKlienta) values('" + CurentOrder + "','" + IIDProduktu + "','" + Amount.Text + "','" + UserValue + "') ";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Poprawnie dodadno produkt do koszyka!");
                     }
